@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logo preview · Sukhumvit Set</title>
+
+<style>
+@font-face { font-family:'Sukhumvit Set'; src:url('assets/fonts/sukhumvitset-thin.ttf')     format('truetype'); font-weight:100; font-display:swap; }
+@font-face { font-family:'Sukhumvit Set'; src:url('assets/fonts/sukhumvitset-light.ttf')    format('truetype'); font-weight:300; font-display:swap; }
+@font-face { font-family:'Sukhumvit Set'; src:url('assets/fonts/sukhumvitset-text.ttf')     format('truetype'); font-weight:400; font-display:swap; }
+@font-face { font-family:'Sukhumvit Set'; src:url('assets/fonts/sukhumvitset-medium.ttf')   format('truetype'); font-weight:500; font-display:swap; }
+@font-face { font-family:'Sukhumvit Set'; src:url('assets/fonts/sukhumvitset-semibold.ttf') format('truetype'); font-weight:600; font-display:swap; }
+@font-face { font-family:'Sukhumvit Set'; src:url('assets/fonts/sukhumvitset-bold.ttf')     format('truetype'); font-weight:700; font-display:swap; }
+
+:root{
+  /* Neutral ramp — โครงสร้าง */
+  --white:#FFFFFF;
+  --g1:#E6E7EB;
+  --g2:#8B93A1;
+  --g3:#5A6270;
+  --black:#000000;
+
+  /* Warm — อารมณ์ */
+  --terracotta:#FFD43B;
+  --wine:#4361EE;
+  --sand:#F7F8FA;
+  --pine:#1F2328;
+
+  /* mapping ที่โค้ดเดิมเรียกใช้ */
+  --ink:#1F2328;
+  --cream:#F7F8FA;
+  --red:#4361EE;
+  --sage:#5A6270;
+  --olive:#5A6270;
+  --paper:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Sukhumvit Set',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  padding:64px 32px 96px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;}
+.page-title{font-size:1.05rem;font-weight:500;letter-spacing:.02em;}
+.page-note{font-size:.86rem;font-weight:300;color:#8B93A1;margin-top:6px;line-height:1.7;}
+hr{border:none;border-top:1px solid rgba(0,0,0,.12);margin:28px 0 40px;}
+
+h2.sec{font-size:.72rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#8B93A1;margin:56px 0 20px;}
+h2.sec:first-of-type{margin-top:0;}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:20px;}
+.card{border-radius:6px;padding:56px 28px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:210px;}
+.cap{font-size:.78rem;font-weight:400;color:#8B93A1;margin-top:10px;line-height:1.65;}
+.cap b{font-weight:500;color:var(--ink);}
+
+.bg-cream{background:var(--cream);}
+.bg-olive{background:var(--g3);}
+.bg-terra{background:var(--terracotta);}
+.bg-sand{background:var(--sand);}
+.bg-white{background:#fff;border:1px solid rgba(0,0,0,.1);}
+.bg-red{background:var(--red);}
+.bg-forest{background:var(--ink);}
+.bg-paper{background:#fff;border:1px solid rgba(0,0,0,.12);}
+
+.mark{line-height:1;}
+.m-thin   {font-weight:100;font-size:52px;letter-spacing:.01em;}
+.m-light  {font-weight:300;font-size:50px;letter-spacing:-.005em;}
+.m-med    {font-weight:500;font-size:44px;letter-spacing:-.01em;}
+.m-semi   {font-weight:600;font-size:42px;letter-spacing:-.015em;}
+
+.rule{height:1px;width:56px;margin:16px auto;}
+.sub{font-size:9.5px;font-weight:400;letter-spacing:.42em;text-transform:uppercase;text-align:center;}
+.sub-tight{letter-spacing:.28em;}
+
+.dot{display:inline-block;width:.16em;height:.16em;border-radius:50%;vertical-align:.62em;margin-left:.06em;}
+
+.lock{display:flex;align-items:center;gap:16px;}
+.sq{width:60px;height:60px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;}
+.sq span{font-weight:300;font-size:34px;line-height:1;}
+.sq i{position:absolute;top:11px;right:11px;width:7px;height:7px;border-radius:50%;}
+.lock-txt .l1{font-weight:400;font-size:27px;letter-spacing:-.01em;line-height:1.1;}
+.lock-txt .l2{font-size:8.5px;font-weight:400;letter-spacing:.32em;text-transform:uppercase;margin-top:5px;}
+
+.sizes{display:flex;align-items:flex-end;gap:36px;flex-wrap:wrap;}
+.size-item{text-align:center;}
+.size-item .lbl{font-size:.72rem;color:#8B93A1;margin-top:10px;font-weight:300;}
+.sq-s{border-radius:9px;}
+.sq-xs{border-radius:5px;}
+
+.swatches{display:flex;gap:12px;flex-wrap:wrap;}
+.sw{width:120px;}
+.sw .chip{height:64px;border-radius:5px;}
+.sw .hex{font-size:.72rem;font-weight:400;margin-top:8px;color:#8B93A1;}
+.sw .use{font-size:.72rem;font-weight:300;color:#8B93A1;line-height:1.5;}
+
+.weights p{margin-bottom:14px;line-height:1.3;}
+.wt-lbl{font-size:.7rem;color:#8B93A1;font-weight:300;letter-spacing:.06em;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="page-title">Logo preview · Sukhumvit Set</p>
+  <p class="page-note">
+    ทุกตัวอย่างในหน้านี้ใช้ Sukhumvit Set ที่ติดตั้งในเว็บอยู่แล้ว ไม่ได้ใช้ฟอนต์อื่น<br>
+    เลือกแบบที่ชอบแล้วบอก Claude ได้เลย เดี๋ยวทำเป็นไฟล์ SVG จริงพร้อม favicon และ icon สำหรับ LINE
+  </p>
+  <hr>
+
+  <h2 class="sec">น้ำหนักฟอนต์ ตัวเดียวกันหมด</h2>
+  <div class="weights" style="background:var(--cream);border-radius:6px;padding:36px 32px;">
+    <p><span class="mark m-thin">unpop</span> &nbsp;<span class="wt-lbl">thin 100</span></p>
+    <p><span class="mark m-light">unpop</span> &nbsp;<span class="wt-lbl">light 300</span></p>
+    <p><span class="mark" style="font-weight:400;font-size:46px;">unpop</span> &nbsp;<span class="wt-lbl">text 400</span></p>
+    <p><span class="mark m-med">unpop</span> &nbsp;<span class="wt-lbl">medium 500</span></p>
+    <p style="margin-bottom:0;"><span class="mark m-semi">unpop</span> &nbsp;<span class="wt-lbl">semibold 600</span></p>
+  </div>
+
+  <h2 class="sec">01 · Editorial stack</h2>
+  <div class="grid">
+    <div>
+      <div class="card bg-cream">
+        <div>
+          <div class="mark m-light" style="color:var(--ink);text-align:center;">unpop</div>
+          <div class="rule" style="background:var(--red);"></div>
+          <div class="sub" style="color:var(--olive);">The Unpopular Club</div>
+        </div>
+      </div>
+      <p class="cap"><b>Light บนพื้นทราย</b> ใช้เป็นตัวหลัก ไวน์โผล่แค่เส้นเดียว</p>
+    </div>
+
+    <div>
+      <div class="card bg-olive">
+        <div>
+          <div class="mark m-light" style="color:var(--cream);text-align:center;">unpop</div>
+          <div class="rule" style="background:rgba(255,255,255,.5);"></div>
+          <div class="sub" style="color:rgba(255,255,255,.86);">The Unpopular Club</div>
+        </div>
+      </div>
+      <p class="cap"><b>บนพื้นเทาเข้ม</b> สำหรับปกงานนำเสนอและโซเชียล</p>
+    </div>
+
+    <div>
+      <div class="card bg-forest">
+        <div>
+          <div class="mark m-light" style="color:var(--cream);text-align:center;">unpop</div>
+          <div class="rule" style="background:var(--terracotta);"></div>
+          <div class="sub" style="color:rgba(255,255,255,.8);">The Unpopular Club</div>
+        </div>
+      </div>
+      <p class="cap"><b>บนพื้นเข้ม</b> อ่านง่ายที่สุด เหมาะกับเอกสารองค์กร</p>
+    </div>
+  </div>
+
+  <h2 class="sec">02 · จุดที่ออกนอกแถว</h2>
+  <div class="grid">
+    <div>
+      <div class="card bg-cream">
+        <div style="text-align:center;">
+          <div class="mark m-light" style="color:var(--ink);">unpop<span class="dot" style="background:var(--red);"></span></div>
+          <div class="sub sub-tight" style="color:var(--olive);margin-top:18px;">The Unpopular Club</div>
+        </div>
+      </div>
+      <p class="cap"><b>จุดลอยเหนือเส้นบรรทัด</b> ปกติฟูลสต็อปอยู่ล่าง อันนี้ไม่อยู่</p>
+    </div>
+
+    <div>
+      <div class="card bg-cream">
+        <div style="text-align:center;">
+          <div class="mark m-med" style="color:var(--ink);">unpop<span class="dot" style="background:var(--red);"></span></div>
+          <div class="sub sub-tight" style="color:var(--olive);margin-top:18px;">The Unpopular Club</div>
+        </div>
+      </div>
+      <p class="cap"><b>Medium</b> หนักแน่นกว่า เห็นชัดขึ้นตอนย่อ</p>
+    </div>
+
+    <div>
+      <div class="card bg-red">
+        <div style="text-align:center;">
+          <div class="mark m-light" style="color:var(--cream);">unpop<span class="dot" style="background:var(--cream);"></span></div>
+          <div class="sub sub-tight" style="color:rgba(255,255,255,.85);margin-top:18px;">The Unpopular Club</div>
+        </div>
+      </div>
+      <p class="cap"><b>พื้นไวน์</b> ใช้จุดเดียวพอ เช่น icon LINE</p>
+    </div>
+  </div>
+
+  <h2 class="sec">03 · เรื่องอยู่ในคำอยู่แล้ว</h2>
+  <div class="grid">
+    <div>
+      <div class="card bg-cream">
+        <div style="text-align:center;">
+          <div style="font-size:40px;line-height:1;"><span style="font-weight:500;color:var(--red);">un</span><span style="font-weight:300;color:rgba(31,35,40,.32);">popular</span></div>
+          <div class="sub" style="color:var(--olive);margin-top:18px;">Club</div>
+        </div>
+      </div>
+      <p class="cap"><b>popular จางลง</b> เหลือ un แบกน้ำหนัก</p>
+    </div>
+
+    <div>
+      <div class="card bg-cream">
+        <div style="text-align:center;">
+          <div style="font-size:40px;line-height:1;"><span style="font-weight:500;color:var(--ink);">un</span><span style="font-weight:100;color:var(--ink);">popular</span></div>
+          <div class="sub" style="color:var(--olive);margin-top:18px;">Club</div>
+        </div>
+      </div>
+      <p class="cap"><b>เล่นน้ำหนักแทนสี</b> ขาวดำล้วน ปลอดภัยที่สุดกับ HR</p>
+    </div>
+
+    <div>
+      <div class="card bg-forest">
+        <div style="text-align:center;">
+          <div style="font-size:40px;line-height:1;"><span style="font-weight:500;color:var(--terracotta);">un</span><span style="font-weight:100;color:rgba(255,255,255,.55);">popular</span></div>
+          <div class="sub" style="color:rgba(255,255,255,.7);margin-top:18px;">Club</div>
+        </div>
+      </div>
+      <p class="cap"><b>พื้นเข้ม</b> แดงเด่นขึ้นโดยไม่ตะโกน</p>
+    </div>
+  </div>
+
+  <h2 class="sec">04 · Lockup มี mark สำหรับย่อ</h2>
+  <div class="grid">
+    <div>
+      <div class="card bg-cream">
+        <div class="lock">
+          <div class="sq" style="background:var(--ink);">
+            <span style="color:var(--cream);">u</span>
+            <i style="background:var(--terracotta);"></i>
+          </div>
+          <div class="lock-txt">
+            <div class="l1" style="color:var(--ink);">unpop</div>
+            <div class="l2" style="color:var(--olive);">The Unpopular Club</div>
+          </div>
+        </div>
+      </div>
+      <p class="cap"><b>เขียวสน</b> แบบที่นิ่งที่สุด ใช้กับงานองค์กร</p>
+    </div>
+
+    <div>
+      <div class="card bg-cream">
+        <div class="lock">
+          <div class="sq" style="background:var(--red);">
+            <span style="color:var(--cream);">u</span>
+            <i style="background:var(--cream);"></i>
+          </div>
+          <div class="lock-txt">
+            <div class="l1" style="color:var(--ink);">unpop</div>
+            <div class="l2" style="color:var(--olive);">The Unpopular Club</div>
+          </div>
+        </div>
+      </div>
+      <p class="cap"><b>ไวน์</b> จำง่ายที่สุดในฟีด</p>
+    </div>
+
+    <div>
+      <div class="card bg-cream">
+        <div class="lock">
+          <div class="sq" style="background:var(--terracotta);">
+            <span style="color:var(--pine);">u</span>
+            <i style="background:var(--pine);"></i>
+          </div>
+          <div class="lock-txt">
+            <div class="l1" style="color:var(--ink);">unpop</div>
+            <div class="l2" style="color:var(--olive);">The Unpopular Club</div>
+          </div>
+        </div>
+      </div>
+      <p class="cap"><b>ส้มดิน</b> อุ่นที่สุด ใช้กับงานที่พูดกับคนทั่วไป</p>
+    </div>
+  </div>
+
+  <h2 class="sec">ทดสอบขนาดจริง</h2>
+  <div class="card bg-cream" style="align-items:flex-start;padding:44px 32px;">
+    <div class="sizes">
+      <div class="size-item">
+        <div class="sq" style="background:var(--ink);width:96px;height:96px;border-radius:22px;">
+          <span style="color:var(--cream);font-size:54px;">u</span>
+          <i style="background:var(--terracotta);width:11px;height:11px;top:17px;right:17px;"></i>
+        </div>
+        <div class="lbl">96px</div>
+      </div>
+      <div class="size-item">
+        <div class="sq sq-s" style="background:var(--ink);width:40px;height:40px;">
+          <span style="color:var(--cream);font-size:23px;">u</span>
+          <i style="background:var(--terracotta);width:5px;height:5px;top:7px;right:7px;"></i>
+        </div>
+        <div class="lbl">40px · LINE</div>
+      </div>
+      <div class="size-item">
+        <div class="sq sq-xs" style="background:var(--ink);width:32px;height:32px;">
+          <span style="color:var(--cream);font-size:18px;">u</span>
+          <i style="background:var(--terracotta);width:4px;height:4px;top:5px;right:5px;"></i>
+        </div>
+        <div class="lbl">32px</div>
+      </div>
+      <div class="size-item">
+        <div class="sq" style="background:var(--ink);width:16px;height:16px;border-radius:3px;">
+          <span style="color:var(--cream);font-size:10px;">u</span>
+        </div>
+        <div class="lbl">16px · favicon</div>
+      </div>
+      <div class="size-item">
+        <div style="display:flex;align-items:center;gap:9px;">
+          <div class="sq" style="background:var(--ink);width:26px;height:26px;border-radius:6px;">
+            <span style="color:var(--cream);font-size:15px;">u</span>
+          </div>
+          <span style="font-weight:400;font-size:15px;color:var(--ink);">unpop</span>
+        </div>
+        <div class="lbl">nav bar</div>
+      </div>
+    </div>
+  </div>
+
+
+  <h2 class="sec">พาเลตต์ · ขาวดำเป็นโครง อุ่นเป็นอารมณ์</h2>
+
+  <p class="page-note" style="margin-bottom:20px;">
+    สองชุดนี้ทำงานคนละหน้าที่ ไม่ได้แข่งกัน<br>
+    <b style="font-weight:500;">ขาวดำ</b> คือโครงสร้าง ตัวอักษร เส้น ตาราง เอกสาร งานที่ต้องส่งให้ HR
+    <b style="font-weight:500;">อุ่น</b> คือจุดที่แบรนด์พูด โลโก้ ปุ่ม ปก
+  </p>
+
+  <div class="swatches">
+    <div class="sw"><div class="chip bg-white"></div><div class="hex">FFFFFF</div><div class="use">พื้นเอกสาร</div></div>
+    <div class="sw"><div class="chip" style="background:var(--g1);"></div><div class="hex">CCCCCC</div><div class="use">เส้นคั่น ขอบ</div></div>
+    <div class="sw"><div class="chip" style="background:var(--g2);"></div><div class="hex">888888</div><div class="use">ป้ายกำกับ คำอธิบาย</div></div>
+    <div class="sw"><div class="chip" style="background:var(--g3);"></div><div class="hex">444444</div><div class="use">หัวข้อรอง</div></div>
+    <div class="sw"><div class="chip" style="background:var(--black);"></div><div class="hex">000000</div><div class="use">ตัวอักษร เอกสารขาวดำ</div></div>
+  </div>
+
+  <div class="swatches" style="margin-top:14px;">
+    <div class="sw"><div class="chip" style="background:var(--sand);"></div><div class="hex">E6C6AE</div><div class="use">พื้นหลังหลัก แทนครีม</div></div>
+    <div class="sw"><div class="chip" style="background:var(--terracotta);"></div><div class="hex">E0955C</div><div class="use">เน้นบนพื้นเข้ม</div></div>
+    <div class="sw"><div class="chip" style="background:var(--wine);"></div><div class="hex">82494B</div><div class="use">เน้นบนพื้นสว่าง</div></div>
+    <div class="sw"><div class="chip" style="background:var(--pine);"></div><div class="hex">17302D</div><div class="use">ตัวอักษร พื้นเข้ม</div></div>
+  </div>
+
+  <h2 class="sec">กฎการใช้ ที่ทำให้ไม่มั่ว</h2>
+  <div style="background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:6px;padding:30px 28px;">
+    <p class="cap" style="margin:0 0 14px;"><b>ส้มดินกับไวน์ห้ามอยู่ด้วยกัน</b> เลือกหนึ่งตัวต่อหนึ่งงาน สองตัวพร้อมกันจะดูเหมือนร้านอาหาร</p>
+    <p class="cap" style="margin:0 0 14px;"><b>ส้มดินใช้เฉพาะบนพื้นเข้ม</b> E0955C บนพื้นทรายได้ค่า contrast ประมาณ 1.7 ต่อ 1 คืออ่านไม่ออก</p>
+    <p class="cap" style="margin:0 0 14px;"><b>ไวน์ใช้เฉพาะบนพื้นสว่าง</b> 82494B บนพื้นทรายได้ประมาณ 5 ต่อ 1 ผ่านเกณฑ์</p>
+    <p class="cap" style="margin:0 0 14px;"><b>งานองค์กรใช้ขาวดำอย่างเดียว</b> โลโก้เวอร์ชัน 000000 บนขาว ไม่ต้องมีสีเลย</p>
+    <p class="cap" style="margin:0;"><b>หนึ่งงานใช้สีอุ่นได้ไม่เกินสองตัว</b> รวมพื้นหลัง</p>
+  </div>
+
+  <h2 class="sec">เวอร์ชันขาวดำ · สำหรับเอกสาร แฟกซ์ ปั๊ม สลักโลหะ</h2>
+  <div class="grid">
+    <div>
+      <div class="card bg-white">
+        <div style="text-align:center;">
+          <div class="mark m-light" style="color:#000;">unpop<span class="dot" style="background:#000;"></span></div>
+          <div class="sub sub-tight" style="color:#888;margin-top:18px;">The Unpopular Club</div>
+        </div>
+      </div>
+      <p class="cap"><b>ดำล้วน</b> ตัวหลักสำหรับเอกสาร</p>
+    </div>
+    <div>
+      <div class="card" style="background:#000;">
+        <div style="text-align:center;">
+          <div class="mark m-light" style="color:#fff;">unpop<span class="dot" style="background:#fff;"></span></div>
+          <div class="sub sub-tight" style="color:#CCC;margin-top:18px;">The Unpopular Club</div>
+        </div>
+      </div>
+      <p class="cap"><b>กลับสี</b> สำหรับพื้นดำ</p>
+    </div>
+    <div>
+      <div class="card bg-white">
+        <div class="lock">
+          <div class="sq" style="background:#000;">
+            <span style="color:#fff;">u</span>
+            <i style="background:#fff;"></i>
+          </div>
+          <div class="lock-txt">
+            <div class="l1" style="color:#000;">unpop</div>
+            <div class="l2" style="color:#888;">The Unpopular Club</div>
+          </div>
+        </div>
+      </div>
+      <p class="cap"><b>Mark ขาวดำ</b> favicon และ LINE เวอร์ชันสำรอง</p>
+    </div>
+  </div>
+
+  <h2 class="sec">เวอร์ชันอุ่น · สำหรับโซเชียลและเว็บ</h2>
+  <div class="grid">
+    <div>
+      <div class="card bg-sand">
+        <div style="text-align:center;">
+          <div class="mark m-light" style="color:var(--pine);">unpop<span class="dot" style="background:var(--wine);"></span></div>
+          <div class="sub sub-tight" style="color:var(--g3);margin-top:18px;">The Unpopular Club</div>
+        </div>
+      </div>
+      <p class="cap"><b>ทราย เขียวสน ไวน์</b> ตัวหลักของเว็บ</p>
+    </div>
+    <div>
+      <div class="card" style="background:var(--pine);">
+        <div style="text-align:center;">
+          <div class="mark m-light" style="color:var(--sand);">unpop<span class="dot" style="background:var(--terracotta);"></span></div>
+          <div class="sub sub-tight" style="color:rgba(255,255,255,.72);margin-top:18px;">The Unpopular Club</div>
+        </div>
+      </div>
+      <p class="cap"><b>พื้นเขียวสน</b> ส้มดินทำหน้าที่จุดเดียว</p>
+    </div>
+    <div>
+      <div class="card bg-terra">
+        <div style="text-align:center;">
+          <div class="mark m-light" style="color:var(--pine);">unpop<span class="dot" style="background:var(--pine);"></span></div>
+          <div class="sub sub-tight" style="color:rgba(31,35,40,.7);margin-top:18px;">The Unpopular Club</div>
+        </div>
+      </div>
+      <p class="cap"><b>พื้นส้มดิน</b> ใช้กับปกคอนเทนต์ ไม่ใช้กับโลโก้หลัก</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

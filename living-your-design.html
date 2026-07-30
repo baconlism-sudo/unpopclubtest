@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Living Your Design | The Unpopular Club</title>
+  <meta name="description" content="คอร์ส Human Design พื้นฐาน เรียนเนื้อหาผ่านวิดีโอ แล้วคุยตัวต่อตัวกับ Sean 2 ครั้ง ครั้งละ 2 ชั่วโมง เพื่อเอา Type, Strategy, Authority ไปใช้กับชีวิตของคุณจริงๆ">
+  <link rel="icon" href="assets/logo/mark-favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="assets/logo/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/logo/favicon-180.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">ข้ามไปเนื้อหา</a>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  <a href="https://www.patreon.com/cw/unpop_club" target="_blank">
+    <span class="ann-badge">FREE</span>
+    Workshop: "Why You Feel Lost"
+    <span class="ann-sep">·</span>
+    Sun, 26 Jul 2026 &nbsp;·&nbsp; 18:00–20:00
+    <span class="ann-sep">·</span>
+    Join Free →
+  </a>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/Unpop logo.png" alt="The Unpopular Club">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Start Here</a></li>
+      <li><a href="chart-check.html" data-en="Free Chart Check">เช็ก Chart ฟรี</a></li>
+      <li><a href="living-your-design.html" class="active">Living Your Design</a></li>
+      <li><a href="for-professionals.html" data-en="Certification">Certification</a></li>
+      <li><a href="for-teams.html" data-en="For Teams">สำหรับองค์กร</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><div class="lang-toggle"><button class="lang-opt lang-opt-th">TH</button><button class="lang-opt lang-opt-en">EN</button></div></li>
+      <li><a href="chart-check.html" class="nav-cta" data-en="Free Chart Check →">เช็ก Chart ฟรี →</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Flyout overlay -->
+<div class="flyout-overlay" id="flyout-overlay"></div>
+
+<!-- Flyout drawer -->
+<div class="nav-mobile" id="flyout-drawer">
+    <div class="flyout-header">
+      <img loading="lazy" src="assets/Unpop logo.png" alt="The Unpopular Club" class="flyout-logo">
+      <button class="flyout-close" id="flyout-close" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="flyout-links">
+    <a href="index.html">Start Here</a>
+    <a href="chart-check.html" data-en="Free Chart Check">เช็ก Chart ฟรี</a>
+    <a href="living-your-design.html" class="active">Living Your Design</a>
+    <a href="for-professionals.html" data-en="Certification">Certification</a>
+    <a href="for-teams.html" data-en="For Teams">สำหรับองค์กร</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" data-en="Contact">ติดต่อ</a>
+    </nav>
+    <div class="flyout-cta">
+      <a href="https://www.patreon.com/cw/unpop_club" target="_blank" class="btn btn-cream btn-sm" style="text-align:center; justify-content:center;">Member Area →</a>
+      <div class="flyout-lang">
+        <button class="lang-opt lang-opt-th">TH</button>
+        <button class="lang-opt lang-opt-en">EN</button>
+      </div>
+    </div>
+  </div>
+
+<!-- HERO -->
+<section id="main-content" class="page-hero">
+  <a href="https://buy.stripe.com/4gMeVeee6fuVfEN17yb3q01" target="_blank" class="page-hero-img-link" aria-label="Enrol in Living Your Design">
+    <div class="page-hero-bg" style="background-image:url(assets/lvd-cover.jpg); background-position:center 35%;"></div>
+    <div class="page-hero-overlay"></div>
+  </a>
+  <div class="container page-hero-content">
+    <div class="page-hero-inner">
+      <span class="page-hero-badge page-hero-badge--open">OPEN NOW</span>
+      <p class="page-hero-eyebrow">Online Course · Private 1:1</p>
+      <h1 class="page-hero-title">Living Your Design</h1>
+      <p class="page-hero-sub" data-en="You've done everything right. But something still feels off ,<br>and you know it's not just tiredness.">ทำมาทุกอย่างที่ควรทำ มีสิ่งที่ควรมี<br>แต่ข้างในยังรู้สึกว่ามีบางอย่างที่ off และคุณรู้ว่ามันไม่ใช่แค่ความเหนื่อย</p>
+      <div class="page-hero-meta">
+        <span class="page-hero-meta-item">Video course</span>
+        <span class="page-hero-meta-sep">·</span>
+        <span class="page-hero-meta-item">2 × 2 hr private sessions</span>
+        <span class="page-hero-meta-sep">·</span>
+        <span class="page-hero-meta-item">$500 USD</span>
+      </div>
+      <div class="page-hero-actions">
+        <a href="https://buy.stripe.com/4gMeVeee6fuVfEN17yb3q01" target="_blank" class="btn btn-cream btn-lg">Enrol in Living Your Design →</a>
+        <a href="#lvd-schedule" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,0.35); color:#fff;" data-en="View Curriculum">ดูเนื้อหาคอร์ส</a>
+      </div>
+    </div>
+  </div>
+  <div class="page-hero-hint">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    Register →
+  </div>
+</section>
+
+<!-- VALUE STRIP -->
+<section style="padding: 0 0 72px;">
+  <div class="container">
+    <div class="value-strip">
+      <div class="value-item">
+        <div class="value-item-icon" style="display:flex; justify-content:center; margin-bottom:12px;">
+          <img loading="lazy" src="assets/emoji coure overview.png" alt="" width="48" height="48" style="object-fit:contain;">
+        </div>
+        <h4>What Will You Learn?</h4>
+        <p data-en="Decode how you actually work. So you stop spending energy on things that were never yours to carry.">ถอดรหัสกลไกที่แท้จริงของตัวเอง เพื่อหยุดเสียพลังงานไปกับสิ่งที่ไม่ใช่คุณ และเริ่มใช้ชีวิตที่ลดแรงเสียดทาน</p>
+      </div>
+      <div class="value-item">
+        <div class="value-item-icon" style="display:flex; justify-content:center; margin-bottom:12px;">
+          <img loading="lazy" src="assets/emoji who's this for.png" alt="" width="48" height="48" style="object-fit:contain;">
+        </div>
+        <h4>Who Is This For</h4>
+        <p data-en="Those who've tried therapy, MBTI and self-help, and still feel something deeper is missing.">คนที่เคยลอง therapy, MBTI, หรือ self-help มาแล้ว แต่ยังรู้สึกว่ายังไม่ถึงกลไกจริงๆ ของตัวเอง</p>
+      </div>
+      <div class="value-item">
+        <div class="value-item-icon" style="display:flex; justify-content:center; margin-bottom:12px;">
+          <img loading="lazy" src="assets/emoji what'll you get.png" alt="" width="48" height="48" style="object-fit:contain;">
+        </div>
+        <h4>What You'll Walk Away With</h4>
+        <p data-en="A framework for decisions that actually fits you, not borrowed logic, not someone else's system.">Framework ตัดสินใจที่ตรงกับแบบของคุณจริงๆ ไม่ใช่เหตุผลที่ยืมมา ไม่ใช่ระบบของคนอื่น</p>
+      </div>
+      <div class="value-item">
+        <div class="value-item-icon" style="display:flex; justify-content:center; margin-bottom:12px;">
+          <img loading="lazy" src="assets/emoji gift.png" alt="" width="48" height="48" style="object-fit:contain;">
+        </div>
+        <h4>How You Learn</h4>
+        <p data-en="Watch the curriculum on video at your own pace, then work through it with Sean one to one.">ดูเนื้อหาผ่านวิดีโอในจังหวะของตัวเอง แล้วมาคุยกับ Sean ตัวต่อตัวเพื่อเอาไปใช้จริง</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EARLY REGISTRATION -->
+<section id="details" style="padding: 0 0 80px;">
+  <div class="container">
+    <div class="feature-split">
+      <div class="feature-split-content">
+        <div>
+          <span class="hero-eyebrow" style="margin-bottom:16px;">Private 1:1 · 2 sessions</span>
+          <h2 class="h2">Not a Class You Sit In. A Conversation About You.</h2>
+        </div>
+        <p class="body-md text-mid" data-en="The curriculum lives on video, so you can watch it whenever you want and rewatch the parts that don't land the first time. What you get with Sean is the part video can't do: two private sessions, two hours each, about your chart and your actual life.">
+          เนื้อหาทั้งหมดอยู่ในวิดีโอ ดูตอนไหนก็ได้ ตรงไหนไม่เข้าใจก็ย้อนดูซ้ำได้ ส่วนที่ได้จาก Sean คือสิ่งที่วิดีโอทำแทนไม่ได้ นั่นคือการคุยตัวต่อตัว 2 ครั้ง ครั้งละ 2 ชั่วโมง เรื่อง chart ของคุณ กับชีวิตที่คุณกำลังเจออยู่จริงๆ
+        </p>
+        <p class="body-md text-mid" style="margin-bottom:16px;" data-en="What people bring to these sessions:">สิ่งที่คนมักเอามาคุยใน session นี้:</p>
+        <ul style="list-style:none; padding:0; margin:0 0 24px 0;">
+          <li style="display:flex; gap:12px; padding:10px 0; border-bottom:1px solid var(--border); align-items:flex-start;">
+            <span style="color:var(--accent); font-size:0.85rem; flex-shrink:0; margin-top:2px;">✦</span>
+            <div>
+              <p style="font-size:0.9rem; font-weight:600; color:var(--ink); margin-bottom:2px;" data-en="Energy Audit">Energy Audit</p>
+              <p style="font-size:0.82rem; color:var(--ink-mid);" data-en="Identify where you're leaking energy, and what to stop doing">วิเคราะห์ว่าคุณกำลัง drain พลังงานไปกับอะไร และอะไรที่ควรหยุด</p>
+            </div>
+          </li>
+          <li style="display:flex; gap:12px; padding:10px 0; border-bottom:1px solid var(--border); align-items:flex-start;">
+            <span style="color:var(--accent); font-size:0.85rem; flex-shrink:0; margin-top:2px;">✦</span>
+            <div>
+              <p style="font-size:0.9rem; font-weight:600; color:var(--ink); margin-bottom:2px;" data-en="Decision Clarity">Decision Clarity</p>
+              <p style="font-size:0.82rem; color:var(--ink-mid);" data-en="Make a real decision using your own design, not borrowed logic">ใช้ design ของตัวเองเป็นเข็มทิศตอนตัดสินใจเรื่องใหญ่ ไม่ใช่เหตุผลที่ยืมมา</p>
+            </div>
+          </li>
+          <li style="display:flex; gap:12px; padding:10px 0; border-bottom:1px solid var(--border); align-items:flex-start;">
+            <span style="color:var(--accent); font-size:0.85rem; flex-shrink:0; margin-top:2px;">✦</span>
+            <div>
+              <p style="font-size:0.9rem; font-weight:600; color:var(--ink); margin-bottom:2px;" data-en="Relationship Dynamics">Relationship Dynamics</p>
+              <p style="font-size:0.82rem; color:var(--ink-mid);" data-en="See which relationships are draining you, and understand why">อ่านว่าความสัมพันธ์ไหนดูดพลังงาน และทำความเข้าใจว่าทำไม</p>
+            </div>
+          </li>
+          <li style="display:flex; gap:12px; padding:10px 0; align-items:flex-start;">
+            <span style="color:var(--accent); font-size:0.85rem; flex-shrink:0; margin-top:2px;">✦</span>
+            <div>
+              <p style="font-size:0.9rem; font-weight:600; color:var(--ink); margin-bottom:2px;" data-en="Life Direction">Life Direction</p>
+              <p style="font-size:0.82rem; color:var(--ink-mid);" data-en="If you're in transition, use Human Design as a lens to see what's actually correct for you">ถ้าคุณอยู่ในช่วง transition ใช้ Human Design เป็นเลนส์อ่านว่าอะไรที่ใช่สำหรับคุณจริงๆ</p>
+            </div>
+          </li>
+        </ul>
+        <div class="notice-box">
+          <div class="notice-box-icon">
+            <img loading="lazy" src="assets/emoji prerequisite.png" alt="" width="32" height="32" style="object-fit:contain;">
+          </div>
+          <p class="notice-box-text">
+            <span data-en="You book both sessions yourself. There's no fixed batch and no start date to wait for."><strong>คุณเลือกวันเวลาเอง</strong> ไม่มีรอบเรียน ไม่ต้องรอวันเปิดคอร์ส</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- CTA CARD -->
+      <div style="display:flex; flex-direction:column; gap:16px; justify-content:center;">
+        <div style="border-radius:var(--radius-xl); overflow:hidden; background:var(--brand-dark);">
+          <div style="padding:28px 24px;">
+            <p style="font-size:0.7rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-light); margin-bottom:8px;">Living Your Design · Private 1:1</p>
+            <p style="font-size:1.5rem; font-weight:700; color:#fff; margin-bottom:4px;">$500 USD</p>
+            <p style="font-size:0.82rem; color:rgba(255,255,255,0.6); margin-bottom:24px;" data-en="Book your sessions whenever suits you">นัดวันเวลาได้ตามสะดวก</p>
+            <div style="border-top:1px solid rgba(255,255,255,0.12); padding-top:20px; margin-bottom:24px; display:flex; flex-direction:column; gap:12px;">
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <span style="color:var(--sage); flex-shrink:0;">✓</span>
+                <p style="font-size:0.84rem; color:rgba(255,255,255,0.8);" data-en="Full Living Your Design curriculum on video">เนื้อหา Living Your Design ครบทั้งคอร์ส ในรูปแบบวิดีโอ</p>
+              </div>
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <span style="color:var(--sage); flex-shrink:0;">✓</span>
+                <p style="font-size:0.84rem; color:#fff; font-weight:600;" data-en="2 private sessions with Sean, 2 hours each">คุยตัวต่อตัวกับ Sean 2 ครั้ง ครั้งละ 2 ชั่วโมง</p>
+              </div>
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <span style="color:var(--sage); flex-shrink:0;">✓</span>
+                <p style="font-size:0.84rem; color:rgba(255,255,255,0.8);" data-en="Session recording available for 12 hours afterwards">บันทึก session ดูย้อนหลังได้ 12 ชั่วโมงหลังจบ</p>
+              </div>
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <span style="color:var(--sage); flex-shrink:0;">✓</span>
+                <p style="font-size:0.84rem; color:rgba(255,255,255,0.8);" data-en="Thai guidebook for every session">Guidebook ภาษาไทยครบทุก session</p>
+              </div>
+            </div>
+            <a href="https://buy.stripe.com/4gMeVeee6fuVfEN17yb3q01" target="_blank" class="btn btn-cream btn-lg" style="width:100%; justify-content:center; text-align:center;">Enrol in Living Your Design →</a>
+            <p style="font-size:0.75rem; color:rgba(255,255,255,0.45); text-align:center; margin-top:12px;" data-en="We'll be in touch to schedule your sessions after payment">หลังชำระเงิน เราจะติดต่อกลับเพื่อนัดวันเวลา</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEAN QUALIFICATIONS -->
+<section style="padding: 0 0 80px;">
+  <div class="container">
+    <div class="grid-2" style="gap:24px; align-items:start;">
+      <div class="card">
+        <div class="avatar-card" style="margin-bottom:28px;">
+          <img loading="lazy" src="assets/sean-avatar.png" alt="Sean" class="avatar-img portrait-bw">
+          <div>
+            <h3 class="h4">Sean</h3>
+            <p class="body-sm text-light">Human Design &amp; BG5 Analyst / Instructor</p>
+          </div>
+        </div>
+        <div class="qual-group">
+          <span class="qual-label">Teacher Qualifications</span>
+          <ul class="qual-list">
+            <li>Living Your Design Guide, Licensed Teaching</li>
+            <li>BG5 Foundation, Licensed Teaching</li>
+          </ul>
+        </div>
+        <div class="qual-group">
+          <span class="qual-label">Analyst Qualifications</span>
+          <ul class="qual-list">
+            <li>Human Design Individual Rave Analysis</li>
+            <li>BG5 Career &amp; Business Consultant</li>
+            <li>BG5 Career &amp; Business Cycles Consultant</li>
+            <li>BG5 Profit Potential Assessment</li>
+          </ul>
+        </div>
+        <div class="qual-group">
+          <span class="qual-label">Advanced Analyst</span>
+          <ul class="qual-list">
+            <li>IHDS Individual Rave Analysis</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <div class="card" style="margin-bottom:24px;">
+          <p class="label text-accent" style="margin-bottom:16px;">Certifications</p>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+            <img loading="lazy" src="assets/certificates/living-your-design-guide-licensed-teaching.jpg" alt="IHDS Living Your Design Guide" style="border-radius:8px; width:100%; object-fit:cover;">
+            <img loading="lazy" src="assets/certificates/bg5-career-business-consultant.jpg" alt="BG5 Career & Business Consultant" style="border-radius:8px; width:100%; object-fit:cover;">
+            <img loading="lazy" src="assets/certificates/bg5-career-business-cycles-consultant.jpg" alt="BG5 Career & Business Cycles Consultant" style="border-radius:8px; width:100%; object-fit:cover;">
+            <img loading="lazy" src="assets/certificates/bg5-profit-potential.jpg" alt="BG5 Profit Potential Coach" style="border-radius:8px; width:100%; object-fit:cover;">
+            <img loading="lazy" src="assets/certificates/human-design-individual-rave-analysis.jpg" alt="IHDS Individual Rave Analysis" style="border-radius:8px; width:100%; object-fit:cover;">
+            <img loading="lazy" src="assets/certificates/bg5-foundation-teaching-licensed.jpg" alt="BG5 Foundation Instructor" style="border-radius:8px; width:100%; object-fit:cover;">
+          </div>
+        </div>
+        <div class="card-sm">
+          <img loading="lazy" src="assets/sean-bg5-chart.png" alt="Sean BG5 BodyGraph" style="border-radius:10px; width:100%;">
+          <p class="body-sm text-light" style="margin-top:12px; text-align:center;" data-en="Sean's BodyGraph">BodyGraph ของ Sean</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU'LL LEARN -->
+<section style="padding: 0 0 80px;">
+  <div class="container">
+    <div class="grid-2" style="align-items:start; gap:32px;">
+      <div>
+        <div class="has-sticker section-header"><img loading="lazy" src="assets/stickers/burst-butter.svg" alt="" class="sticker sticker--tr" data-drift="24" width="70" height="70">
+          <p class="label text-accent">What You'll Learn</p>
+          <h2 class="h2" style="margin-top:10px;">What You'll Learn</h2>
+          <p class="body-md text-mid" style="margin-top:12px;">
+            <span data-en="This course covers the foundational Human Design elements you can actually use to observe yourself in daily life.">คอร์สนี้สอน foundation ของ Human Design<br>
+            ที่นำไปใช้สังเกตตัวเองได้จริงในชีวิตประจำวัน</span>
+          </p>
+        </div>
+        <!-- OBJECTIVES -->
+        <div style="margin-bottom:24px; display:flex; flex-direction:column; gap:10px;">
+          <p class="label text-accent" style="margin-bottom:4px;">Objectives</p>
+          <div style="padding:12px 16px; background:var(--cream); border-radius:var(--radius-md);">
+            <p style="font-size:0.87rem; color:var(--ink); line-height:1.55;" data-en="Read your own BodyGraph: understand what Type, Strategy, and Authority mean in practice, not just in theory."><strong>อ่าน BodyGraph ของตัวเองได้</strong> : เข้าใจว่า Type, Strategy และ Authority หมายความว่าอะไรในทางปฏิบัติ ไม่ใช่แค่ทฤษฎี</p>
+          </div>
+          <div style="padding:12px 16px; background:var(--cream); border-radius:var(--radius-md);">
+            <p style="font-size:0.87rem; color:var(--ink); line-height:1.55;" data-en="Know your Inner Authority: and start making decisions from your own mechanism, not from conditioning."><strong>รู้จัก Inner Authority ของตัวเอง</strong> : และเริ่มตัดสินใจจากกลไกที่ใช่ ไม่ใช่จากสิ่งที่ถูก condition มา</p>
+          </div>
+          <div style="padding:12px 16px; background:var(--cream); border-radius:var(--radius-md);">
+            <p style="font-size:0.87rem; color:var(--ink); line-height:1.55;" data-en="Understand what Defined / Undefined / Open Centers mean in real life, and which energy is actually yours."><strong>เข้าใจว่า Defined / Undefined / Open Centers</strong> หมายความว่าอะไรในชีวิตจริง และพลังงานไหนที่เป็นของเราจริงๆ</p>
+          </div>
+          <div style="padding:12px 16px; background:var(--cream); border-radius:var(--radius-md);">
+            <p style="font-size:0.87rem; color:var(--ink); line-height:1.55;" data-en="Notice your Not-Self Theme: develop awareness of when you've been living against your Design, understand why you've felt the way you have, and learn how to shift through your own Strategy and Authority."><strong>สังเกต Not-Self Theme ของตัวเองได้</strong> : มี Awareness เพิ่มมากขึ้นจากการใช้ชีวิตผิด Design เรียนรู้ว่าทำไมถึงรู้สึกแบบนี้มาตลอด และเราจะปรับได้ยังไงผ่าน Strategy และ Authority ของตัวเราเอง</p>
+          </div>
+        </div>
+        <ul class="learn-list">
+          <li data-en="Your Type and Strategy, and why they matter">Type และ Strategy ของคุณ และทำไมมันสำคัญ</li>
+          <li data-en="Inner Authority, the right decision-making process for your specific type">Inner Authority วิธีตัดสินใจที่ถูกต้องสำหรับ type คุณโดยเฉพาะ</li>
+          <li data-en="BodyGraph basics: how to read your own chart">BodyGraph เบื้องต้น อ่านแผนที่ของตัวเองเป็น</li>
+          <li data-en="Defined vs Undefined Centers, knowing which energy is actually yours">Defined vs Undefined Centers รู้ว่าพลังงานไหนเป็นของเราจริงๆ</li>
+          <li data-en="Deconditioning: how to start in real life">Deconditioning เริ่มต้นอย่างไรในชีวิตจริง</li>
+          <li data-en="Not-Self Theme, recognizing when you're out of alignment">Not-Self Theme จำแนกได้เมื่อเราออกนอกแบบของตัวเอง</li>
+        </ul>
+        <ul style="list-style:none; padding:0; margin:12px 0 0; display:flex; flex-direction:column; gap:6px;">
+          <li style="color:var(--ink-mid); display:flex; align-items:flex-start; gap:10px; padding:8px 12px; background:rgba(67,97,238,0.06); border-radius:6px;" data-en="✕ Not covered in depth: Gates, Lines, Channels, Profiles, Incarnation Cross"><span style="color:#4361EE; flex-shrink:0; margin-top:1px;">✕</span><span style="font-size:0.85rem;">สิ่งที่คอร์สนี้ยังไม่ลงลึก: Gates, Lines, Channels, Profiles, Incarnation Cross</span></li>
+        </ul>
+      </div>
+      <div class="card" style="align-self:start;">
+        <h4 class="h4" style="margin-bottom:20px;">Who This Is For</h4>
+        <ul class="learn-list">
+          <li data-en="You've built the life that looks right, but something still feels off and you can't explain why">คนที่สร้างชีวิตที่ดูถูกต้องมาแล้ว แต่ยังรู้สึกว่ามีบางอย่าง off อธิบายไม่ได้</li>
+          <li data-en="You're in a major transition, and want clarity, not just motivation">คนที่กำลังอยู่ในช่วงเปลี่ยนผ่านสำคัญ และต้องการความชัดเจน ไม่ใช่แค่แรงบันดาลใจ</li>
+          <li data-en="You've tried MBTI, Enneagram, therapy, and still feel like something deeper is missing">คนที่เคยลอง MBTI, Enneagram, therapy มาแล้ว แต่รู้สึกว่ายังแตะไม่ถึงกลไกจริงๆ</li>
+          <li data-en="You're tired of spending energy on things that were never meant for you">คนที่เหนื่อยกับการเสียพลังงานไปกับสิ่งที่ไม่ใช่ตัวเอง</li>
+        </ul>
+        <div class="divider"></div>
+        <h4 class="h4" style="margin-bottom:20px;">Who This Isn't For</h4>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px;">
+          <li style="color:var(--ink-mid); display:flex; align-items:flex-start; gap:10px;" data-en="Looking for quick fixes or a one-size-fits-all formula"><span style="color:#4361EE; flex-shrink:0; margin-top:1px;">✕</span>ต้องการคำตอบ quick fix หรือสูตรสำเร็จ</li>
+          <li style="color:var(--ink-mid); display:flex; align-items:flex-start; gap:10px;" data-en="Not ready to observe and experiment in real life"><span style="color:#4361EE; flex-shrink:0; margin-top:1px;">✕</span>ไม่พร้อมสังเกตและทดลองในชีวิตจริง</li>
+          <li style="color:var(--ink-mid); display:flex; align-items:flex-start; gap:10px;" data-en="Only looking for a personal 1:1 chart reading"><span style="color:#4361EE; flex-shrink:0; margin-top:1px;">✕</span>ต้องการ reading แบบ 1:1 เท่านั้น</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSE SCHEDULE -->
+<section id="lvd-schedule" style="padding: 0 0 80px;">
+  <div class="container">
+    <div class="section-header">
+      <p class="label text-accent">Video Curriculum</p>
+      <h2 class="h2" style="margin-top:10px;">What You'll Watch, Module by Module</h2>
+      <p class="body-md text-mid" style="margin-top:12px; max-width:560px;">
+        <span data-en="The full &lt;strong&gt;Living Your Design&lt;/strong&gt; curriculum comes as &lt;strong&gt;8 recorded modules&lt;/strong&gt; in two phases. Watch at your own pace, then bring whatever came up to your 1:1 sessions.">เนื้อหา <strong>Living Your Design</strong> ทั้งหมดอยู่ในวิดีโอ <strong>8 module</strong> แบ่งเป็น 2 ช่วง ดูตามจังหวะของตัวเอง แล้วเก็บสิ่งที่สงสัยไว้คุยใน session ตัวต่อตัว</span>
+      </p>
+    </div>
+
+    <!-- PHASE 1 LABEL -->
+    <div style="margin:32px 0 16px; padding:8px 16px; background:var(--accent); color:#fff; border-radius:var(--radius-sm); display:inline-block; font-size:0.8rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase;" data-en="Phase 1 · Foundation">ช่วงที่ 1 · Foundation</div>
+
+    <!-- DAY 1 -->
+    <div class="card" style="margin-bottom:16px;">
+      <div style="display:flex; gap:12px; align-items:center; margin-bottom:20px; padding-bottom:16px; border-bottom:1px solid var(--border);">
+        <div style="width:48px; height:48px; background:var(--cream); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1.1rem; flex-shrink:0;">1</div>
+        <div>
+          <p class="label text-accent">Part 1</p>
+          <p class="body-sm text-light">Foundation</p>
+        </div>
+      </div>
+      <div style="display:grid; gap:16px;">
+        <div style="padding:16px; background:var(--cream); border-radius:var(--radius-md);">
+          <div style="display:flex; gap:12px; margin-bottom:10px;">
+            <span style="font-size:0.75rem; font-weight:600; color:var(--accent);">Module 1</span>
+            <span style="font-size:0.75rem; color:var(--ink-mid);" data-en="Recorded video">วิดีโอบันทึก</span>
+          </div>
+          <h4 class="h4" style="margin-bottom:8px;">Introduction + What Human Design Is / Isn't</h4>
+          <p class="body-sm text-mid" data-en="What Human Design is in practical terms, and what it is not.">Human Design คืออะไรในเชิง practical และ Human Design ไม่ใช่การทำนายอนาคต</p>
+          <ul class="learn-list" style="margin-top:12px; font-size:0.85rem;">
+            <li data-en="Course introduction">แนะนำคอร์ส Living Your Design</li>
+            <li data-en="What Human Design is / isn't">Human Design คืออะไร / ไม่ใช่อะไร</li>
+            <li data-en="How Human Design applies to real life">Human Design ใช้กับชีวิตจริงอย่างไร</li>
+          </ul>
+          <div style="display:flex; align-items:flex-start; gap:8px; padding:6px 10px; background:rgba(67,97,238,0.06); border-radius:6px; margin-top:8px; font-size:0.85rem;" data-en="✕ Not covered in depth: Gates, Lines, Channels, Profiles, Incarnation Cross"><span style="color:#4361EE; flex-shrink:0; margin-top:1px;">✕</span><span style="color:var(--ink-mid);">สิ่งที่คอร์สนี้ยังไม่ลงลึก: Gates, Lines, Channels, Profiles, Incarnation Cross</span></div>
+        </div>
+        <div style="padding:16px; background:var(--cream); border-radius:var(--radius-md);">
+          <div style="display:flex; gap:12px; margin-bottom:10px;">
+            <span style="font-size:0.75rem; font-weight:600; color:var(--accent);">Module 2</span>
+            <span style="font-size:0.75rem; color:var(--ink-mid);" data-en="Recorded video">วิดีโอบันทึก</span>
+          </div>
+          <h4 class="h4" style="margin-bottom:8px;">Origin, BodyGraph & True Self / Not-Self</h4>
+          <p class="body-sm text-mid" data-en="The foundations of the Human Design system, and beginning to see whether we're living as ourselves or from conditioning.">พื้นฐานของระบบ Human Design และเริ่มเห็นว่าเราใช้ชีวิตจากตัวเองจริงๆ หรือจาก conditioning</p>
+          <ul class="learn-list" style="margin-top:12px; font-size:0.85rem;">
+            <li data-en="What the BodyGraph is / Conscious vs Unconscious">BodyGraph คืออะไร / Conscious vs Unconscious</li>
+            <li data-en="What Definition is">Definition คืออะไร</li>
+            <li data-en="True Self vs Not-Self">True Self vs Not-Self</li>
+            <li data-en="What Conditioning is, and why the Mind tries to make decisions instead of the body">Conditioning คืออะไร และทำไม Mind ถึงพยายามเป็นคนตัดสินใจแทนร่างกาย</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:16px; text-align:right; font-size:0.8rem; color:var(--ink-mid);"><span data-en="Modules 1–2">Module 1–2</span></div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="card" style="margin-bottom:16px;">
+      <div style="display:flex; gap:12px; align-items:center; margin-bottom:20px; padding-bottom:16px; border-bottom:1px solid var(--border);">
+        <div style="width:48px; height:48px; background:var(--cream); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1.1rem; flex-shrink:0;">2</div>
+        <div>
+          <p class="label text-accent">Part 2</p>
+          <p class="body-sm text-light">Foundation</p>
+        </div>
+      </div>
+      <div style="display:grid; gap:16px;">
+        <div style="padding:16px; background:var(--cream); border-radius:var(--radius-md);">
+          <div style="display:flex; gap:12px; margin-bottom:10px;">
+            <span style="font-size:0.75rem; font-weight:600; color:var(--accent);">Module 3</span>
+            <span style="font-size:0.75rem; color:var(--ink-mid);" data-en="Recorded video">วิดีโอบันทึก</span>
+          </div>
+          <h4 class="h4" style="margin-bottom:8px;">The 9 Centers: Defined / Undefined / Open</h4>
+          <p class="body-sm text-mid" data-en="The Centers in the BodyGraph, and beginning to see where conditioning enters us.">Centers ใน BodyGraph และเริ่มเห็นว่า conditioning เข้ามาทำงานผ่านส่วนไหนของเรา</p>
+          <ul class="learn-list" style="margin-top:12px; font-size:0.85rem;">
+            <li data-en="What Defined / Undefined / Open Centers are">Defined / Undefined / Open Center คืออะไร</li>
+            <li data-en="How Undefined Centers take in conditioning">Undefined Centers รับ conditioning อย่างไร</li>
+            <li data-en="Not-Self Talk for each Center">Not-Self Talk ของแต่ละ Center</li>
+            <li data-en="Overview of the 9 Centers: Head, Ajna, Throat, G, Heart/Ego, Spleen, Solar Plexus, Sacral, Root">ภาพรวม 9 Centers: Head, Ajna, Throat, G, Heart/Ego, Spleen, Solar Plexus, Sacral, Root</li>
+          </ul>
+        </div>
+        <div style="padding:16px; background:var(--cream); border-radius:var(--radius-md);">
+          <div style="display:flex; gap:12px; margin-bottom:10px;">
+            <span style="font-size:0.75rem; font-weight:600; color:var(--accent);">Module 4</span>
+            <span style="font-size:0.75rem; color:var(--ink-mid);" data-en="Recorded video">วิดีโอบันทึก</span>
+          </div>
+          <h4 class="h4" style="margin-bottom:8px;">Type, Aura & Strategy</h4>
+          <p class="body-sm text-mid" data-en="All 4 Types and each Type's Strategy, to start experimenting with in real life.">Type ทั้ง 4 และ Strategy ของแต่ละ Type เพื่อเริ่มทดลองใช้กับชีวิตจริง</p>
+          <ul class="learn-list" style="margin-top:12px; font-size:0.85rem;">
+            <li data-en="Manifestor · Generator / Manifesting Generator · Projector · Reflector">Manifestor · Generator / Manifesting Generator · Projector · Reflector</li>
+            <li data-en="Aura + Not-Self Theme + Signature for each Type">Aura + Not-Self Theme + Signature ของแต่ละ Type</li>
+            <li data-en="Strategy: Inform / Wait to Respond / Wait for Invitation / Wait 28 days">Strategy: Inform / Wait to Respond / Wait for Invitation / Wait 28 days</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:16px; text-align:right; font-size:0.8rem; color:var(--ink-mid);"><span data-en="Modules 3–4">Module 3–4</span></div>
+    </div>
+
+    <!-- EXPERIMENT BREAK -->
+    <div style="margin:24px 0; padding:24px; border:2px dashed var(--border); border-radius:var(--radius-lg); text-align:center;">
+      <p class="label text-accent" style="margin-bottom:8px;">Session 1 with Sean · 2 hours</p>
+      <p class="body-md text-mid" style="max-width:480px; margin:0 auto;" data-en="After the Foundation modules, sit down with Sean for two hours. Go through your own chart, ask what didn't make sense on video, and leave with something specific to test in real life.">หลังดู Foundation จบ นัดคุยกับ Sean 2 ชั่วโมง ดู chart ของตัวเอง ถามสิ่งที่ดูวิดีโอแล้วยังไม่กระจ่าง แล้วกลับไปพร้อมโจทย์ที่ชัดว่าจะลองอะไรกับชีวิตจริง</p>
+    </div>
+
+    <!-- PHASE 2 LABEL -->
+    <div style="margin:16px 0; padding:8px 16px; background:var(--accent); color:#fff; border-radius:var(--radius-sm); display:inline-block; font-size:0.8rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase;" data-en="Phase 2 · Integration">ช่วงที่ 2 · Integration</div>
+
+    <!-- DAY 3 -->
+    <div class="card" style="margin-bottom:16px;">
+      <div style="display:flex; gap:12px; align-items:center; margin-bottom:20px; padding-bottom:16px; border-bottom:1px solid var(--border);">
+        <div style="width:48px; height:48px; background:var(--cream); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1.1rem; flex-shrink:0;">3</div>
+        <div>
+          <p class="label text-accent">Part 3</p>
+          <p class="body-sm text-light">Integration</p>
+        </div>
+      </div>
+      <div style="display:grid; gap:16px;">
+        <div style="padding:16px; background:var(--cream); border-radius:var(--radius-md);">
+          <div style="display:flex; gap:12px; margin-bottom:10px;">
+            <span style="font-size:0.75rem; font-weight:600; color:var(--accent);">Module 5</span>
+            <span style="font-size:0.75rem; color:var(--ink-mid);" data-en="Recorded video">วิดีโอบันทึก</span>
+          </div>
+          <h4 class="h4" style="margin-bottom:8px;">Centers & Conditioning in Real Life</h4>
+          <p class="body-sm text-mid" data-en="Review Centers and conditioning through the real experiences students had during the 2-week experiment break.">ทบทวน Centers และ conditioning ผ่านประสบการณ์จริงที่คุณได้ไปลองในช่วงพัก 2 สัปดาห์</p>
+          <ul class="learn-list" style="margin-top:12px; font-size:0.85rem;">
+            <li data-en="Review of the 9 Centers">ทบทวน 9 Centers</li>
+            <li data-en="How Conditioning affects decision-making">Conditioning ส่งผลต่อการตัดสินใจอย่างไร</li>
+            <li data-en="How Not-Self Theme shows up in real life">Not-Self Theme โผล่ในชีวิตจริงอย่างไร</li>
+            <li data-en="How to spot conditioning as it happens">วิธีจับสังเกต conditioning ตอนที่มันกำลังเกิดขึ้น</li>
+          </ul>
+        </div>
+        <div style="padding:16px; background:var(--cream); border-radius:var(--radius-md);">
+          <div style="display:flex; gap:12px; margin-bottom:10px;">
+            <span style="font-size:0.75rem; font-weight:600; color:var(--accent);">Module 6</span>
+            <span style="font-size:0.75rem; color:var(--ink-mid);" data-en="Recorded video">วิดีโอบันทึก</span>
+          </div>
+          <h4 class="h4" style="margin-bottom:8px;">Authority & Decision-Making</h4>
+          <p class="body-sm text-mid" data-en="Each person has a built-in decision-making intelligence, and it's almost never the Mind. This session maps out every Authority type and shows you how to recognise yours.">แต่ละคนมีกลไกการตัดสินใจที่เป็นของตัวเอง และมันแทบไม่ใช่ Mind เลย Session นี้จะอธิบาย Authority แต่ละแบบ และสอนให้รู้จักของตัวเอง</p>
+          <ul class="learn-list" style="margin-top:12px; font-size:0.85rem;">
+            <li data-en="Inner Authority: Solar Plexus · Sacral · Splenic · Ego Projected / Ego Manifested · Self Projected">Inner Authority: Solar Plexus · Sacral · Splenic · Ego Projected / Ego Manifested · Self Projected</li>
+            <li data-en="Outer Authority: Mental / Environment · Lunar">Outer Authority: Mental / Environment · Lunar</li>
+            <li data-en="Why the Mind is not the Authority, and what it's actually for">ทำไม Mind ถึงไม่ใช่ Authority และ Mind มีไว้ทำอะไรจริงๆ</li>
+            <li data-en="How to start noticing your Not-Self theme through Open / Undefined Centers">วิธีเริ่มสังเกต Not-Self theme ผ่าน Open / Undefined Center ของตัวเอง</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:16px; text-align:right; font-size:0.8rem; color:var(--ink-mid);"><span data-en="Modules 5–6">Module 5–6</span></div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div class="card" style="margin-bottom:24px;">
+      <div style="display:flex; gap:12px; align-items:center; margin-bottom:20px; padding-bottom:16px; border-bottom:1px solid var(--border);">
+        <div style="width:48px; height:48px; background:var(--cream); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1.1rem; flex-shrink:0;">4</div>
+        <div>
+          <p class="label text-accent">Part 4</p>
+          <p class="body-sm text-light">Integration</p>
+        </div>
+      </div>
+      <div style="display:grid; gap:16px;">
+        <div style="padding:16px; background:var(--cream); border-radius:var(--radius-md);">
+          <div style="display:flex; gap:12px; margin-bottom:10px;">
+            <span style="font-size:0.75rem; font-weight:600; color:var(--accent);">Module 7</span>
+            <span style="font-size:0.75rem; color:var(--ink-mid);" data-en="Recorded video">วิดีโอบันทึก</span>
+          </div>
+          <h4 class="h4" style="margin-bottom:8px;">Strategy & Authority Experiment Review</h4>
+          <p class="body-sm text-mid" data-en="Review what students experimented with using Strategy &amp; Authority, and connect it back to real life.">ทบทวนสิ่งที่คุณได้ลองใช้ Strategy & Authority และเชื่อมโยงกลับเข้ากับชีวิตจริง</p>
+          <ul class="learn-list" style="margin-top:12px; font-size:0.85rem;">
+            <li data-en="How your own Strategy works">Strategy ของตัวเองทำงานอย่างไร</li>
+            <li data-en="How your own Authority feels">Authority ของตัวเองรู้สึกอย่างไร</li>
+            <li data-en="The difference between Mind and Authority">ความต่างระหว่าง Mind กับ Authority</li>
+            <li data-en="Common places people get stuck, and what to do about them">จุดที่คนมักติด และทางออกของแต่ละจุด</li>
+          </ul>
+        </div>
+        <div style="padding:16px; background:var(--cream); border-radius:var(--radius-md);">
+          <div style="display:flex; gap:12px; margin-bottom:10px;">
+            <span style="font-size:0.75rem; font-weight:600; color:var(--accent);">Module 8</span>
+            <span style="font-size:0.75rem; color:var(--ink-mid);" data-en="Recorded video">วิดีโอบันทึก</span>
+          </div>
+          <h4 class="h4" style="margin-bottom:8px;">Integration, Q&A & Next Step</h4>
+          <p class="body-sm text-mid" data-en="Wrap up the course and plan how to keep using Human Design once the modules are done.">สรุปภาพรวมของคอร์ส และวางแนวทางการนำ Human Design ไปใช้ต่อหลังดูจบ</p>
+          <ul class="learn-list" style="margin-top:12px; font-size:0.85rem;">
+            <li data-en="Summary: Type, Strategy, Authority, Centers">สรุป Type, Strategy, Authority, Centers</li>
+            <li data-en="How to continue experimenting with Human Design after the course">การทดลองใช้ Human Design หลังจบคอร์ส</li>
+            <li data-en="Building your own experiment, one decision at a time">ออกแบบการทดลองของตัวเอง ทีละการตัดสินใจ</li>
+            <li data-en="Where to go next if you want to take Human Design further">ไปต่อทางไหนได้บ้าง ถ้าอยากเรียน Human Design ให้ลึกขึ้น</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:16px; text-align:right; font-size:0.8rem; color:var(--ink-mid);"><span data-en="Modules 7–8">Module 7–8</span></div>
+    </div>
+
+    <!-- SESSION 2 WITH SEAN -->
+    <div style="margin:24px 0; padding:24px; border:2px dashed var(--border); border-radius:var(--radius-lg); text-align:center;">
+      <p class="label text-accent" style="margin-bottom:8px;">Session 2 with Sean · 2 hours</p>
+      <p class="body-md text-mid" style="max-width:480px; margin:0 auto;" data-en="Come back after you've had time to test things. This session is about what actually happened: what worked, what didn't, and how to keep going without needing a teacher in the room.">กลับมาคุยอีกครั้งหลังได้ลองใช้จริงมาสักพัก รอบนี้คุยเรื่องที่เกิดขึ้นจริง อะไรเวิร์ก อะไรไม่เวิร์ก และจะเดินต่อยังไงโดยไม่ต้องมีคนสอนอยู่ข้างๆ</p>
+    </div>
+
+    <div class="notice-box">
+      <div class="notice-box-icon">
+        <img loading="lazy" src="assets/emoji  video course.png" alt="" width="32" height="32" style="object-fit:contain;">
+      </div>
+      <p class="notice-box-text" data-en="Curriculum videos are yours to rewatch anytime. Your two 1:1 sessions are recorded too, and stay available for &lt;strong&gt;12 hours after each session ends&lt;/strong&gt;.">วิดีโอเนื้อหาย้อนดูได้ตลอด ส่วน session 1:1 ทั้ง 2 ครั้งมีบันทึกให้เช่นกัน เปิดให้ดูภายใน <strong>12 ชั่วโมงหลังจบแต่ละครั้ง</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding: 0 0 80px;">
+  <div class="container">
+    <div class="section-header center">
+      <p class="label text-accent">Living Your Design (LYD)</p>
+      <h2 class="h2" style="margin-top:10px;">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list" style="max-width:760px; margin:0 auto;">
+      <div class="faq-item">
+        <button class="faq-question" data-en="What Is Living Your Design?<span class=&quot;faq-icon&quot;>+</span>">Living Your Design คืออะไร?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+<p data-en="Living Your Design (LYD) is the foundational Human Design course covering key topics such as Type, Strategy, Authority, Centers, Not-Self, and Conditioning.">Living Your Design หรือ LYD คือคอร์สพื้นฐานของ Human Design ที่เริ่มจากหัวข้อสำคัญ เช่น Type, Strategy, Authority, Centers, Not-Self และ Conditioning</p>
+          <p data-en="This course isn't about predicting the future. It's about observing yourself, experimenting with Human Design in real life, and beginning to see what's correct for you through your own experience.">คอร์สนี้ไม่ได้เน้นการทำนายอนาคต แต่เน้นการสังเกตตัวเอง ทดลองใช้ Human Design ในชีวิตจริง และเริ่มเห็นว่าอะไรคือสิ่งที่ถูกต้องสำหรับตัวเองผ่านประสบการณ์ของตัวเอง</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="Is this an astrology / fortune-telling course?<span class=&quot;faq-icon&quot;>+</span>">คอร์สนี้เป็นคอร์สดูดวงไหม?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+<p data-en="No. Living Your Design is not an astrology or fortune-telling course, and it doesn't tell you how your life should be.">ไม่ใช่ค่ะ Living Your Design ไม่ใช่คอร์สดูดวง ไม่ใช่คอร์สทำนายอนาคต และไม่ใช่การบอกว่าชีวิตใครต้องเป็นแบบไหน</p>
+          <p data-en="This course is about learning Human Design to better understand your own mechanics, and experimenting with Strategy &amp; Authority in real life.">คอร์สนี้คือการเรียน Human Design เพื่อเข้าใจกลไกของตัวเองมากขึ้น และทดลองใช้ Strategy & Authority ในชีวิตจริง</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="Who is this course for?<span class=&quot;faq-icon&quot;>+</span>">คอร์สนี้เหมาะกับใคร?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+<p data-en="This course is for people who want to learn Human Design from a proper foundation, who know their Type / Authority but don't know how to apply it in real life, who feel confused reading their chart, or who want to start experimenting with Strategy &amp; Authority in daily life.">คอร์สนี้เหมาะกับคนที่อยากเริ่มเรียน Human Design จากพื้นฐานที่ถูกต้อง, รู้ Type / Authority ของตัวเองแล้วแต่ยังไม่รู้ว่าจะเอาไปใช้ในชีวิตจริงยังไง, อ่าน chart แล้วรู้สึกงงหรือข้อมูลเยอะเกินไป, และอยากทดลองใช้ Strategy & Authority กับชีวิตประจำวัน</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="Can I join if I've never studied Human Design before?<span class=&quot;faq-icon&quot;>+</span>">ถ้าไม่เคยเรียน Human Design มาก่อน เรียนได้ไหม?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+<p data-en="Yes. This course is designed for beginners. It builds step by step from Type, Strategy, Authority, Centers, and Not-Self. No prior knowledge required. You just need to be ready to observe yourself and experiment.">เรียนได้ค่ะ คอร์สนี้เหมาะกับคนเริ่มต้น เพราะค่อยๆ ปูจาก Type, Strategy, Authority, Centers และ Not-Self ไม่จำเป็นต้องรู้ลึกมาก่อน แค่พร้อมสังเกตตัวเองและทดลองใช้สิ่งที่เรียนในชีวิตจริง</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="If I already know my Type and Authority, is it still worth taking?<span class=&quot;faq-icon&quot;>+</span>">ถ้ารู้ Type กับ Authority แล้ว ยังน่าเรียนไหม?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+<p data-en="Yes. If you feel like &quot;I know the information, but I don't know how to use it,&quot; Living Your Design helps you see that Strategy &amp; Authority aren't just chart data, they're something you observe and experiment with through lived experience.">น่าเรียนค่ะ ถ้ายังรู้สึกว่า "รู้ข้อมูลแล้ว แต่ยังใช้จริงไม่เป็น" Living Your Design ช่วยให้เห็นว่า Strategy & Authority ไม่ใช่แค่ข้อมูลใน chart แต่เป็นสิ่งที่ต้องค่อยๆ สังเกตและทดลองผ่านประสบการณ์จริง</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="How is the course structured?<span class=&quot;faq-icon&quot;>+</span>">คอร์สนี้เรียนยังไง?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+<p data-en="The curriculum comes as 8 recorded video modules in two phases, Foundation (Modules 1–4) and Integration (Modules 5–8). On top of that you get two private sessions with Sean, two hours each, for 4 hours of live 1:1 time.">เนื้อหาอยู่ในวิดีโอ 8 module แบ่งเป็น 2 ช่วง คือ Foundation (Module 1–4) และ Integration (Module 5–8) นอกจากนั้นคุณจะได้คุยตัวต่อตัวกับ Sean 2 ครั้ง ครั้งละ 2 ชั่วโมง รวมเวลาสด 4 ชั่วโมง</p>
+          <p data-en="Most people watch the Foundation modules, book Session 1, spend a couple of weeks testing things in real life, then watch Integration and book Session 2.">คนส่วนใหญ่จะดู Foundation ก่อน แล้วนัด Session 1 จากนั้นใช้เวลาสักสองสัปดาห์ทดลองกับชีวิตจริง แล้วค่อยดู Integration และนัด Session 2</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="When do the 1:1 sessions happen?<span class=&quot;faq-icon&quot;>+</span>">Session 1:1 นัดเวลาไหน?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+<p data-en="You pick the times. There's no fixed batch and no start date to wait for. After you enrol we'll be in touch to schedule both sessions around what works for you.">คุณเลือกเวลาเอง ไม่มีรอบเรียน ไม่ต้องรอวันเปิดคอร์ส หลังสมัครแล้วเราจะติดต่อกลับเพื่อนัดทั้งสองครั้งตามเวลาที่คุณสะดวก</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="What language is the course taught in?<span class=&quot;faq-icon&quot;>+</span>">เรียนเป็นภาษาอะไร?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+<p data-en="Sean teaches in English, in both the video modules and the 1:1 sessions. A Thai guidebook comes with every module, so you can get the overview in Thai before you watch.">Sean สอนเป็นภาษาอังกฤษ ทั้งในวิดีโอและ session 1:1 โดยมี Guidebook ภาษาไทยแนบมาทุก module ให้อ่านสรุปภาพรวมก่อนดูได้</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="Are recordings available?<span class=&quot;faq-icon&quot;>+</span>">มีวิดีโอบันทึกย้อนหลังไหม?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+<p data-en="The 8 curriculum modules are yours to rewatch anytime. Your two 1:1 sessions are recorded as well, and stay available for 12 hours after each session ends.">วิดีโอเนื้อหาทั้ง 8 module ย้อนดูได้ตลอด ส่วน session 1:1 ทั้งสองครั้งมีบันทึกให้เหมือนกัน เปิดให้ดูภายใน 12 ชั่วโมงหลังจบแต่ละครั้ง</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="What happens in the 1:1 sessions with Sean?<span class=&quot;faq-icon&quot;>+</span>">Session 1:1 กับ Sean คุยอะไรกัน?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+<p data-en="They're built around your chart and your situation, not a script. People bring things like career direction, a decision they've been sitting on for months, a relationship that keeps draining them, or simply the parts of the video that didn't click.">คุยจาก chart ของคุณและเรื่องที่คุณกำลังเจอ ไม่ใช่สคริปต์สำเร็จรูป สิ่งที่คนมักเอามาคุยมีตั้งแต่ทิศทางงาน การตัดสินใจที่ค้างมาหลายเดือน ความสัมพันธ์ที่ดูดพลังงาน ไปจนถึงตรงที่ดูวิดีโอแล้วยังไม่กระจ่าง</p>
+          <p data-en="Session 1 usually comes after the Foundation modules. Session 2 works best once you've had a few weeks to test things in real life.">Session 1 มักจะนัดหลังดู Foundation จบ ส่วน Session 2 จะได้ผลที่สุดเมื่อคุณมีเวลาลองใช้จริงมาสักสองสามสัปดาห์</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="Will my personal chart be read in this course?<span class=&quot;faq-icon&quot;>+</span>">คอร์สนี้จะอ่าน chart ส่วนตัวให้ไหม?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+<p data-en="This course is not a full personal chart reading. You will learn how to read your own chart at a foundational level, Type, Strategy, Authority, Centers, Not-Self, and Conditioning.">คอร์สนี้ไม่ใช่ personal chart reading แบบเต็มรูปแบบ แต่เราจะได้เรียนรู้วิธีอ่าน chart ตัวเองในระดับพื้นฐาน Type, Strategy, Authority, Centers, Not-Self และ Conditioning</p>
+          <p data-en="For specific questions about your own chart, that's exactly what the two 1:1 sessions with Sean are for.">ส่วนคำถามเฉพาะเกี่ยวกับ chart ของตัวเอง นั่นคือสิ่งที่ session 1:1 ทั้งสองครั้งกับ Sean มีไว้ให้</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="After completing this course, can I read charts for others?<span class=&quot;faq-icon&quot;>+</span>">เรียนจบแล้วจะอ่าน chart ให้คนอื่นได้ไหม?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+<p data-en="This is a foundational course for understanding and experimenting with Human Design for yourself. To read charts professionally, you would need to continue on a deeper pathway through IHDS / BG5.">คอร์สนี้เป็นคอร์สพื้นฐานสำหรับการเข้าใจและทดลองใช้ Human Design กับตัวเอง ถ้าต้องการอ่าน chart ให้คนอื่นในระดับ professional ต้องเรียนต่อในเส้นทางที่ลึกขึ้นตามระบบของ IHDS / BG5</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="What if my English isn't very strong?<span class=&quot;faq-icon&quot;>+</span>">ถ้าภาษาอังกฤษไม่แข็งแรงมาก จะเรียนไหวไหม?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+<p data-en="Yes. Sean teaches in English, but there's a Thai guidebook for every module, and video means you can pause and rewind as much as you need. If you can follow basic English, you'll be fine.">เรียนได้ค่ะ Sean สอนเป็นภาษาอังกฤษ แต่มี Guidebook ภาษาไทยครบทุก module และเพราะเป็นวิดีโอ จะหยุดหรือย้อนกี่รอบก็ได้ ถ้าฟังภาษาอังกฤษพื้นฐานได้ก็ตามทันค่ะ</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="What do I need to prepare before the course starts?<span class=&quot;faq-icon&quot;>+</span>">ต้องเตรียมอะไรบ้างก่อนเริ่มเรียน?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+<p data-en="You'll need: date of birth, time of birth (as accurate as possible), place of birth, your chart (if you already have it), a notebook, and an open mind.">ต้องใช้ วัน เดือน ปีเกิด, เวลาเกิดที่ใกล้เคียงความจริงที่สุด, สถานที่เกิด, chart ของตัวเองถ้ามีแล้ว, สมุด และ open minded ค่ะ</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="How do I enrol?<span class=&quot;faq-icon&quot;>+</span>">สมัครยังไง?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">
+<p data-en="Pay through &lt;a href='https://buy.stripe.com/4gMeVeee6fuVfEN17yb3q01' target='_blank' style='color:var(--accent); text-decoration:underline;'&gt;the secure checkout link&lt;/a&gt;. We'll email you the video course access and get in touch to schedule your two sessions.">ชำระเงินผ่าน <a href="https://buy.stripe.com/4gMeVeee6fuVfEN17yb3q01" target="_blank" style="color:var(--accent); text-decoration:underline;">ลิงก์ชำระเงิน</a> จากนั้นเราจะส่งลิงก์เข้าดูวิดีโอให้ทางอีเมล และติดต่อกลับเพื่อนัด session ทั้งสองครั้ง</p>
+          <p data-en="Questions first? Reach us at &lt;a href='mailto:contact@unpop.club' style='color:var(--accent); text-decoration:underline;'&gt;contact@unpop.club&lt;/a&gt;, on &lt;a href='https://lin.ee/SA9Fq39' target='_blank' style='color:var(--accent); text-decoration:underline;'&gt;LINE&lt;/a&gt;, or DM &lt;a href='https://www.instagram.com/unpop_club' target='_blank' style='color:var(--accent); text-decoration:underline;'&gt;@unpop_club&lt;/a&gt;">อยากถามก่อน ติดต่อได้ที่ <a href="mailto:contact@unpop.club" style="color:var(--accent); text-decoration:underline;">contact@unpop.club</a> ทาง <a href="https://lin.ee/SA9Fq39" target="_blank" style="color:var(--accent); text-decoration:underline;">LINE</a> หรือ DM <a href="https://www.instagram.com/unpop_club" target="_blank" style="color:var(--accent); text-decoration:underline;">@unpop_club</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section style="padding: 0 0 80px;">
+  <div class="container">
+    <div class="cta-band">
+      <h2 class="h2" style="color:#fff;">Start With The Basics.</h2>
+      <p style="font-size:1.5rem; font-weight:700; margin:8px 0 4px; color:#fff;">$500 USD</p>
+      <p style="margin-bottom:20px; color:rgba(255,255,255,0.82);" data-en="8 video modules plus two private sessions with Sean, two hours each. Book them whenever suits you.">วิดีโอ 8 module พร้อมคุยตัวต่อตัวกับ Sean 2 ครั้ง ครั้งละ 2 ชั่วโมง นัดวันเวลาได้ตามสะดวก</p>
+      <a href="https://buy.stripe.com/4gMeVeee6fuVfEN17yb3q01" target="_blank" class="btn btn-cream btn-lg">Enrol in Living Your Design →</a>
+
+      <!-- Certification trust signal -->
+      <div style="margin-top:28px; padding:20px 24px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); border-radius:var(--radius-lg); text-align:left; max-width:560px; margin-left:auto; margin-right:auto;">
+        <p style="font-size:0.8125rem; line-height:1.85; color:rgba(255,255,255,0.88); margin:0;"
+           data-en='Taught by <strong style="color:#fff;">Sean Michael</strong>, <span style="background:rgba(255,255,255,0.13); padding:1px 6px; border-radius:3px; font-weight:600; color:#fff;">certified by both IHDS and BG5 Business Institute</span>. This is not an informal course. Being taught by a certified instructor means <strong style="color:#fff;">every concept you learn is interpreted accurately</strong>, the way Ra Uru Hu intended it, not loosely adapted from secondhand sources. The quality of your foundation depends on the accuracy of what you receive.'>
+          สอนโดย <strong style="color:#fff;">Sean Michael</strong>, <span style="background:rgba(255,255,255,0.13); padding:1px 6px; border-radius:3px; font-weight:600; color:#fff;">ผู้ได้รับการรับรองจากทั้ง IHDS และ BG5 Business Institute</span> นี่ไม่ใช่คอร์สทั่วไป การเรียนกับผู้สอนที่ certified หมายความว่า <strong style="color:#fff;">ทุกแนวคิดที่คุณได้รับมีการตีความที่ถูกต้อง</strong> ตรงตามที่ Ra Uru Hu ตั้งใจไว้ ไม่ใช่การถ่ายทอดต่อจากแหล่งที่ไม่ผ่านการรับรอง รากฐานที่ดีเริ่มต้นที่ความแม่นยำของสิ่งที่คุณได้รับ
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>เข้าใจตัวเอง แล้วตัดสินใจง่ายขึ้น</span><img loading="lazy" src="assets/stickers/star4-butter.svg" alt="" width="20" height="20">
+    <span>The Unpopular Club</span><img loading="lazy" src="assets/stickers/star5-pink.svg" alt="" width="20" height="20">
+    <span>Human Design · BG5 · Bangkok</span><img loading="lazy" src="assets/stickers/burst-sky.svg" alt="" width="20" height="20">
+    <span>เข้าใจตัวเอง แล้วตัดสินใจง่ายขึ้น</span><img loading="lazy" src="assets/stickers/star4-butter.svg" alt="" width="20" height="20">
+    <span>The Unpopular Club</span><img loading="lazy" src="assets/stickers/star5-pink.svg" alt="" width="20" height="20">
+    <span>Human Design · BG5 · Bangkok</span><img loading="lazy" src="assets/stickers/burst-sky.svg" alt="" width="20" height="20">
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <img loading="lazy" src="assets/Unpop logo.png" alt="The Unpopular Club" class="footer-logo">
+        <p class="footer-brand-desc">
+          A space for people who want to understand themselves more clearly, so they can make better decisions in life, work and business.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h5>Start</h5>
+        <ul class="footer-links">
+          <li><a href="chart-check.html" data-en="Free Chart Check">เช็ก Chart ฟรี</a></li>
+          <li><a href="living-your-design.html">Living Your Design</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>More</h5>
+        <ul class="footer-links">
+          <li><a href="for-teams.html" data-en="For Teams">สำหรับองค์กร</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" data-en="Contact">ติดต่อ</a></li>
+          <li><a href="https://www.patreon.com/cw/unpop_club" target="_blank">Patreon</a></li>
+          <li><a href="https://jovianarchive.com/pages/get-your-human-design-chart" target="_blank" data-en="Check Your BodyGraph">เช็ค BodyGraph ของคุณ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Follow</h5>
+        <ul class="footer-links">
+          <li><a href="https://lin.ee/SA9Fq39" target="_blank">LINE</a></li>
+          <li><a href="https://www.instagram.com/unpop_club" target="_blank">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@unpop_club" target="_blank">YouTube</a></li>
+          <li><a href="https://www.tiktok.com/@unpop_club" target="_blank">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 The Unpopular Club · Bangkok, Thailand</span>
+      <div style="display:flex; gap:20px; flex-wrap:wrap; align-items:center;">
+        <a href="privacy-policy.html" style="color:inherit; opacity:0.75; font-size:0.8rem; text-decoration:none;">Privacy Policy</a>
+        <a href="terms-conditions.html" style="color:inherit; opacity:0.75; font-size:0.8rem; text-decoration:none;">Terms &amp; Conditions</a>
+        <a href="disclaimer.html" style="color:inherit; opacity:0.75; font-size:0.8rem; text-decoration:none;">Disclaimer</a>
+        <a href="#cookie-settings" style="color:inherit; opacity:0.75; font-size:0.8rem; text-decoration:none;">Cookie Settings</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="scroll.js"></script>
+<script src="interactive.js"></script>
+<script src="consent.js"></script>
+</body>
+</html>

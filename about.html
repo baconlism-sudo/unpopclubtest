@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | The Unpopular Club</title>
+  <meta name="description" content="The Unpopular Club คืออะไร เราเชื่อในเรื่องอะไร และทำไมถึงทำสิ่งนี้">
+  <link rel="icon" href="assets/logo/mark-favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="assets/logo/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/logo/favicon-180.png">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── ABOUT PAGE — founder section ──────── */
+
+    /* Opening: image left + intro right, image stops at its natural height */
+    .about-founder-split {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .about-founder-image {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      border: 1px solid var(--border-bold);
+      box-shadow: var(--shadow-lg);
+      position: sticky;
+      top: 100px; /* sticks while scrolling intro */
+    }
+    .about-founder-image img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .about-founder-intro {
+      padding-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .about-founder-intro .h2 { margin: 0; }
+
+    /* Single-column reading body — centered, prose-width */
+    .about-founder-body {
+      max-width: 720px;
+      margin: 64px auto 0;
+      padding-bottom: 96px;
+    }
+    .about-founder-body p.body-md { margin-bottom: 24px; }
+    .about-founder-body p.body-md:last-of-type { margin-bottom: 0; }
+
+    /* Pull quote */
+    .about-pullquote {
+      margin: 40px 0;
+      padding: 24px 32px;
+      border-left: 3px solid var(--accent);
+      background: var(--bg-soft);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    }
+    .about-pullquote p {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--ink);
+      font-weight: 600;
+      margin: 0;
+    }
+
+    /* Notebook callout */
+    .about-notebook {
+      background: var(--bg-soft);
+      border: 1px solid var(--border-bold);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin: 40px 0;
+      position: relative;
+    }
+    .about-notebook::before {
+      content: '✦';
+      position: absolute;
+      top: -10px;
+      left: 24px;
+      background: var(--bg-soft);
+      padding: 0 6px;
+      color: var(--accent);
+      font-size: 0.75rem;
+    }
+    .about-notebook p {
+      font-size: 0.9375rem;
+      line-height: 1.85;
+      color: var(--ink-mid);
+      margin: 0;
+    }
+
+    /* Journal closing card */
+    .about-journal-card {
+      background: var(--cream);
+      border: 1px solid var(--border-bold);
+      border-radius: var(--radius-xl);
+      padding: 40px 44px;
+      margin-top: 48px;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+    .about-journal-card::before {
+      content: '𓅸';
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      font-size: 1.4rem;
+      color: rgba(67,97,238,.25);
+    }
+    .about-journal-title {
+      font-size: 1.3125rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 16px;
+      line-height: 1.35;
+    }
+    .about-journal-body {
+      font-size: 0.9375rem;
+      line-height: 1.85;
+      color: var(--ink-mid);
+      margin: 0 0 14px;
+    }
+    .about-journal-cta {
+      font-size: 0.9375rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin: 0;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .about-founder-split {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .about-founder-image {
+        aspect-ratio: 4/3;
+        position: static; /* no sticky on mobile */
+      }
+      .about-founder-body {
+        margin-top: 40px;
+        padding-bottom: 64px;
+      }
+      .about-pullquote { padding: 18px 22px; }
+      .about-journal-card { padding: 28px 24px; }
+      .about-journal-title { font-size: 1.125rem; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">ข้ามไปเนื้อหา</a>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  <a href="https://www.patreon.com/cw/unpop_club" target="_blank">
+    <span class="ann-badge">FREE</span>
+    Workshop: "Why You Feel Lost"
+    <span class="ann-sep">·</span>
+    Sun, 26 Jul 2026 &nbsp;·&nbsp; 18:00–20:00
+    <span class="ann-sep">·</span>
+    Join Free →
+  </a>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/Unpop logo.png" alt="The Unpopular Club">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Start Here</a></li>
+      <li><a href="chart-check.html" data-en="Free Chart Check">เช็ก Chart ฟรี</a></li>
+      <li><a href="living-your-design.html">Living Your Design</a></li>
+      <li><a href="for-professionals.html" data-en="Certification">Certification</a></li>
+      <li><a href="for-teams.html" data-en="For Teams">สำหรับองค์กร</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><div class="lang-toggle"><button class="lang-opt lang-opt-th">TH</button><button class="lang-opt lang-opt-en">EN</button></div></li>
+      <li><a href="chart-check.html" class="nav-cta" data-en="Free Chart Check →">เช็ก Chart ฟรี →</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Flyout overlay -->
+<div class="flyout-overlay" id="flyout-overlay"></div>
+<!-- Flyout drawer -->
+<div class="nav-mobile" id="flyout-drawer">
+    <div class="flyout-header">
+      <img loading="lazy" src="assets/Unpop logo.png" alt="The Unpopular Club" class="flyout-logo">
+      <button class="flyout-close" id="flyout-close" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="flyout-links">
+    <a href="index.html">Start Here</a>
+    <a href="chart-check.html" data-en="Free Chart Check">เช็ก Chart ฟรี</a>
+    <a href="living-your-design.html">Living Your Design</a>
+    <a href="for-professionals.html" data-en="Certification">Certification</a>
+    <a href="for-teams.html" data-en="For Teams">สำหรับองค์กร</a>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html" data-en="Contact">ติดต่อ</a>
+    </nav>
+    <div class="flyout-cta">
+      <a href="https://www.patreon.com/cw/unpop_club" target="_blank" class="btn btn-cream btn-sm" style="text-align:center; justify-content:center;">Member Area →</a>
+      <div class="flyout-lang">
+        <button class="lang-opt lang-opt-th">TH</button>
+        <button class="lang-opt lang-opt-en">EN</button>
+      </div>
+    </div>
+  </div>
+
+<!-- HERO -->
+<section id="main-content" class="page-hero">
+  <!-- Background image — swap src to about-hero.jpg once uploaded -->
+  <div class="page-hero-img-link" style="cursor:default;">
+    <div class="page-hero-bg" style="background-image:url(assets/about-hero.jpg); background-position:center 40%;"></div>
+    <div class="page-hero-overlay" style="background: linear-gradient(to right, rgba(27,42,143,.92) 0%, rgba(27,42,143,.65) 55%, rgba(27,42,143,.35) 100%), linear-gradient(to top, rgba(27,42,143,.75) 0%, transparent 55%);"></div>
+  </div>
+  <div class="container page-hero-content">
+    <div class="page-hero-inner">
+      <span class="page-hero-badge page-hero-badge--about">THE UNPOPULAR CLUB</span>
+      <p class="page-hero-eyebrow" data-en="About · Our Story · Our Beliefs">About · เรื่องราว · สิ่งที่เราเชื่อ</p>
+      <h1 class="page-hero-title">The Space to Remember<br>Who You Already Are</h1>
+      <p class="page-hero-sub" data-en="A space where you choose to understand yourself on your own terms, not follow what everyone said you should do.">พื้นที่ที่คุณเลือกจะเข้าใจตัวเองในแบบของตัวเอง<br>ไม่ใช่ทำตามสิ่งที่ทุกคนบอกว่าควรทำ</p>
+      <div class="page-hero-actions">
+        <a href="#khai-story" class="btn btn-cream btn-lg" data-en="Read Our Story">อ่านเรื่องราวของเรา</a>
+        <a href="contact.html" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,0.35); color:#fff;" data-en="Get in Touch">ติดต่อเรา</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY WE EXIST -->
+<section class="section" style="padding:72px 0 0;">
+  <div class="container">
+    <div style="max-width:720px; margin:0 auto;">
+      <p class="label text-accent">Why we exist</p>
+      <h2 class="h2" style="margin-top:10px; margin-bottom:20px;">It started with a simple question</h2>
+      <p class="body-lg text-mid" style="margin-bottom:16px;" data-en="Why do some people try harder than everyone else, and end up more tired than when they started?">
+        ทำไมบางคนพยายามมากกว่าคนอื่น แต่กลับเหนื่อยกว่าเดิม
+      </p>
+      <p class="body-lg text-mid" style="margin-bottom:16px;" data-en="Most of the time we go looking outside for the answer. Change jobs. Change goals. Change how we live.">
+        หลายครั้ง เรารีบหาคำตอบจากภายนอก เปลี่ยนงาน เปลี่ยนเป้าหมาย เปลี่ยนวิธีใช้ชีวิต
+      </p>
+      <p class="body-lg" style="color:var(--ink); font-weight:600;" data-en="When sometimes the place to start is understanding yourself.">
+        ทั้งที่บางที สิ่งที่ควรเริ่มก่อน คือการเข้าใจตัวเอง
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="section" style="padding:64px 0 0;">
+  <div class="container">
+    <div style="max-width:720px; margin:0 auto;">
+      <p class="label text-accent">What we do</p>
+      <h2 class="h2" style="margin-top:10px; margin-bottom:20px;">A space for learning and consulting</h2>
+      <p class="body-lg text-mid" style="margin-bottom:16px;" data-en="We use Human Design and BG5 as one of our tools, to help people understand themselves, their decisions, their work, and the people around them.">
+        เราใช้ Human Design และ BG5 เป็นหนึ่งในเครื่องมือ
+        เพื่อช่วยให้ผู้คนเข้าใจตัวเอง การตัดสินใจ การทำงาน และความสัมพันธ์กับคนรอบตัว
+      </p>
+      <p class="body-lg text-mid" style="margin-bottom:16px;" data-en="We don't believe any single tool explains everything, and we don't expect everyone to believe the same thing.">
+        เราไม่ได้เชื่อว่ามีเครื่องมือไหนอธิบายทุกอย่างได้ และไม่ได้คาดหวังให้ทุกคนเชื่อในสิ่งเดียวกัน
+      </p>
+      <p class="body-lg" style="color:var(--ink); font-weight:600;" data-en="What matters more is what you take back into your actual life.">
+        สิ่งที่สำคัญกว่าคือสิ่งที่คุณนำกลับไปใช้กับชีวิตจริง
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE THINK -->
+<section class="section" style="padding:64px 0 0;">
+  <div class="container">
+    <div style="max-width:720px; margin:0 auto;">
+      <p class="label text-accent">How we think</p>
+      <h2 class="h2" style="margin-top:10px; margin-bottom:20px;">The decision stays yours</h2>
+      <p class="body-lg text-mid" style="margin-bottom:16px;" data-en="We're not here to tell you who you should be. We don't hand out formulas. And we don't think everyone has to walk the same path.">
+        เราไม่ได้พยายามบอกว่าคุณควรเป็นใคร เราไม่ได้ให้สูตรสำเร็จ
+        และเราไม่ได้มองว่าทุกคนต้องเดินในเส้นทางเดียวกัน
+      </p>
+      <p class="body-lg text-mid" style="margin-bottom:28px;" data-en="Our job is to help you see the options more clearly. The decision is still yours, always.">
+        หน้าที่ของเราคือช่วยให้คุณเห็นตัวเลือกชัดขึ้น ส่วนการตัดสินใจ ยังเป็นของคุณเสมอ
+      </p>
+      <div class="card" style="border-left:3px solid var(--accent); border-radius:0 var(--radius-xl) var(--radius-xl) 0;">
+        <p class="body-lg" style="color:var(--ink); margin-bottom:10px;" data-en="We believe understanding yourself isn't the destination.">
+          เราเชื่อว่าการเข้าใจตัวเอง ไม่ใช่ปลายทาง
+        </p>
+        <p class="body-md text-mid" data-en="It just makes every other decision easier: work, relationships, building something, living.">
+          แต่มันทำให้การตัดสินใจในเรื่องอื่นง่ายขึ้น ไม่ว่าจะเป็นงาน ความสัมพันธ์ การสร้างธุรกิจ หรือการใช้ชีวิต
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KHAI STORY -->
+<section id="khai-story" style="padding: 80px 0 0;">
+  <div class="container">
+
+    <!-- OPENING: two-column — image stays beside the intro only -->
+    <div class="about-founder-split">
+      <div class="about-founder-image">
+        <span class="has-sticker" style="display:inline-block;"><img loading="lazy" src="assets/khai-avatar.png" alt="Khai, The Unpopular Club"class="portrait-bw"><img loading="lazy" src="assets/stickers/heart-pink.svg" alt="" class="sticker sticker--tr" data-drift="18" width="54" height="54"></span>
+      </div>
+      <div class="about-founder-intro">
+        <span class="hero-eyebrow" data-en="Founder">Founder</span>
+        <h2 class="h2">Khai</h2>
+
+        <p class="body-md text-mid" data-en="The Unpopular Club started from a feeling that what the self-help world sells usually looks good on paper, but when you try it in real life, it doesn't fit everyone the same way.">
+          The Unpopular Club เริ่มจากความรู้สึกว่า
+          สิ่งที่โลก self-help ขายมักเป็นสิ่งที่ดูดีบนกระดาษ
+          แต่พอลองทำจริงกลับไม่ fit กับทุกคนเท่ากัน
+        </p>
+
+        <p class="body-md text-mid" data-en="Human Design is a tool that helps you see why what works for others might not work for you, and that's nobody's fault.">
+          Human Design เป็นเครื่องมือที่ช่วยให้เห็นว่า
+          ทำไมวิธีที่ได้ผลกับคนอื่น ถึงอาจไม่ได้ผลกับเรา
+          และนั่นไม่ใช่ความผิดของใคร
+        </p>
+
+        <p class="body-md text-mid" data-en="This is a space for people who genuinely want to understand themselves, not just find a new label.">
+          ที่นี่จึงเป็นพื้นที่สำหรับคนที่อยากเข้าใจตัวเองจริงๆ
+          ไม่ใช่แค่หา label ใหม่ให้ตัวเอง
+        </p>
+      </div>
+    </div>
+
+    <!-- FOUNDER STORY — centered single reading column -->
+    <div class="about-founder-body">
+
+      <div class="section-divider" style="margin: 56px 0;"></div>
+
+      <p class="body-md text-mid" data-en="One more reason this community exists. If you've ever gotten a reading from an independent HD interpreter who <strong style='color:var(--ink);'>used AI to answer</strong>, or just had a bad experience: part of that is because they <span class='hl-violet' style='font-weight:600;'>haven't been certified by IHDS or BG5BI</span>, or they're <span style='font-weight:600; color:var(--ink);'>working from their own conditioning rather than the actual system</span>.">
+        อีกเหตุผลหนึ่งที่ community นี้เกิดขึ้น ถ้าใครเคยเจอ Human Design independent interpreter <strong style="color:var(--ink);">เอา AI มาตอบ</strong>
+        หรือเคยมีประสบการณ์ไม่ดี
+        ส่วนหนึ่งก็เพราะเขา<span class="hl-violet" style="font-weight:600;">ยังไม่ได้รับการรับรองจาก IHDS หรือ BG5BI</span>
+        หรือ <span style="font-weight:600; color:var(--ink);">interpret จาก conditioning ของตัวเองมากกว่าจาก system จริงๆ</span>
+      </p>
+
+      <p class="body-md text-mid" data-en="Khai's own bad experience? Getting <strong style='color:var(--ink);'>blamed</strong>. Khai is an Open G / Not-Self, always asking 'who am I?' A Thai HD interpreter once told Khai: 'The reason you don't love yourself is because you have weird beauty standards.', wtf. Khai has <span class='hl-violet' style='font-weight:600;'>Gate 25 (Incarnation Cross) = universal love</span>. Love mum, love guitar, same feeling. Just love and not-love. <strong style='color:var(--ink);'>That reading had nothing to do with the chart.</strong>">
+        ประสบการณ์แย่ๆ ของไข่คือ<strong style="color:var(--ink);">โดน blame</strong>
+        ไข่เป็น Open G / Not-Self คือ lost identity ตลอด ถามตัวเองตลอดว่า who am I
+        แล้วมีคนไทยที่เป็น HD independent interpreter บอกว่า
+        "ที่ไข่ไม่รักตัวเองเพราะไข่มี beauty standard แปลกๆ", wtf จริงๆ ทั้งที่ไข่มี <span class="hl-violet" style="font-weight:600;">Gate 25 (Incarnation Cross) = universal love</span>
+        รักแม่พอๆ กับรักกีตาร์ มีแค่รักกับไม่รัก
+        <strong style="color:var(--ink);">มันไม่ได้เกี่ยวกับ chart เลยสักนิด</strong>
+      </p>
+
+      <!-- Bridging trust signal -->
+      <div class="about-notebook" style="margin:28px 0 0;">
+        <p data-en="That's why the instructor here, Sean Michael, is certified by both IHDS and BG5 Business Institute. Certification isn't just a credential. It means every concept is interpreted from the actual system. Not personal opinion, not AI, not secondhand knowledge. What you receive here is real Human Design.">
+          นั่นคือเหตุผลที่ผู้สอนที่นี่ <strong style="color:var(--ink);">Sean Michael</strong>, <span class="hl-violet" style="font-weight:600;">ได้รับการรับรองจากทั้ง IHDS และ BG5 Business Institute</span>
+          การ certified ไม่ใช่แค่ credential แต่หมายความว่า<strong style="color:var(--ink);">ทุกอย่างที่คุณได้เรียนมาจาก system จริงๆ</strong> ไม่ใช่จากความเห็นส่วนตัว ไม่ใช่ AI ไม่ใช่ความรู้ที่ส่งต่อกันมาแบบไม่มีต้นทาง สิ่งที่คุณได้รับที่นี่คือ Human Design จริงๆ
+        </p>
+      </div>
+
+      <!-- Pull quote — key message from the story -->
+      <div class="about-pullquote">
+        <p data-en="Your value doesn't come from what you produce. Your value exists just from being you.">
+          คุณค่าของเราไม่ได้อยู่ที่ผลงาน<br>
+          คุณค่าของเรามีตั้งแต่แค่เป็นเรา
+        </p>
+      </div>
+
+      <p class="body-md text-mid" data-en="That was probably the final reason Khai built this community. Khai stepped out of the system that says you have to prove yourself to earn acceptance. Your value doesn't come from what you produce. Your value exists just from being you.">
+        นั่นน่าจะเป็นเหตุผลข้อสุดท้ายที่ทำให้เลือกสร้าง community นี้
+        ไข่เองก็หลุดออกมาจากระบบที่ต้องพิสูจน์ตัวเองเพื่อให้ได้รับการยอมรับ
+        คุณค่าของเราไม่ได้อยู่ที่ผลงาน คุณค่าของเรามีตั้งแต่แค่เป็นเรา
+      </p>
+
+      <div class="section-divider" style="margin: 40px 0;"></div>
+
+      <!-- Notebook callout — capitalism reflection -->
+      <div class="about-notebook">
+        <p data-en="We live in capitalism. A world where everyone wants answers right now. FOMO is real. But you don't have to prove yourself by doing everything. Everyone has inherent worth. Just start.">
+          เราอยู่ในโลกของ capitalism
+          โลกที่คนต้องการคำตอบเดี๋ยวนี้ ตอนนี้
+          ถ้าไม่ตอบตอนนี้ก็กลัวพลาด
+          แต่ไม่ต้องพิสูจน์ตัวเองผ่านการทำทุกอย่าง
+          ทุกคนมีค่าในตัวเอง
+        </p>
+      </div>
+
+      <!-- Closing journal card -->
+      <div class="about-journal-card">
+        <p class="about-journal-title">
+          <span class="hl-violet" data-en="Start in the right place, not the perfect time.">เริ่มที่ถูกที่ ไม่ใช่ถูกเวลา</span>
+        </p>
+        <p class="about-journal-body" data-en="Most people keep waiting for the right timing. But what matters more is environment, people, and direction. Put yourself in the right space, and timing will find its way to you.">
+          คนส่วนใหญ่มัวแต่รอ timing
+          แต่สิ่งที่สำคัญกว่าคือ environment, people และ direction
+          ถ้าวางตัวเองใน space ที่ใช่แล้ว timing จะค่อยๆ มาเอง
+        </p>
+        <p class="about-journal-cta" data-en="The Unpopular Club is that space, for you to decide if it's right for you. 𓅸">
+          The Unpopular Club คือ space นั้น
+          เพื่อให้คุณตัดสินใจว่ามันใช่สำหรับคุณหรือเปล่า 𓅸
+        </p>
+      </div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:40px;">
+        <a href="https://www.instagram.com/unpop_club" target="_blank" class="btn btn-outline btn-sm">Instagram</a>
+        <a href="https://www.youtube.com/@unpop_club" target="_blank" class="btn btn-outline btn-sm">YouTube</a>
+      </div>
+
+    </div><!-- /.about-founder-body -->
+  </div>
+</section>
+
+<!-- SEAN / INSTRUCTOR -->
+<section style="padding: 96px 0 80px; background: var(--bg-soft); border-top: 1px solid var(--border-bold);">
+  <div class="container">
+    <div class="feature-split">
+      <div class="feature-split-content">
+        <span class="hero-eyebrow" style="margin-bottom:16px;" data-en="Instructor">Instructor</span>
+        <h2 class="h2">Sean Michael</h2>
+        <p class="body-md text-mid" data-en="Sean is a certified Human Design and BG5 analyst and instructor with over a decade of experience guiding individuals and organisations through the Human Design system.">
+          Sean เป็น certified Human Design and BG5 analyst and instructor
+          ที่มีประสบการณ์สอนและให้คำปรึกษากว่า 10 ปีทั้งกับบุคคลและองค์กร
+        </p>
+        <p class="body-md text-mid" data-en="He holds multiple certifications from IHDS (International Human Design School) and BG5 Business Institute, and teaches both courses as a fully licensed instructor. Students completing his courses here do not automatically receive IHDS or BG5BI certification, but receive a course completion certificate that counts toward CEU credit through IACET.">
+          Sean ถือ certification จาก IHDS (International Human Design School) และ BG5 Business Institute
+          และสอนทั้งสองคอร์สในฐานะ licensed instructor
+          นักเรียนที่เรียนจบคอร์สกับ Sean ที่นี่ไม่ได้รับ certification จาก IHDS หรือ BG5BI โดยอัตโนมัติ
+          แต่จะได้ certificate of completion ที่นับ CEU credit ผ่าน IACET
+        </p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:20px 0;">
+          <div class="card-sm" style="padding:12px 14px;">
+            <p class="label text-accent" style="margin-bottom:4px; font-size:0.7rem;">IHDS</p>
+            <p class="body-sm" style="font-weight:600; font-size:0.82rem;">Living Your Design Guide</p>
+          </div>
+          <div class="card-sm" style="padding:12px 14px;">
+            <p class="label text-accent" style="margin-bottom:4px; font-size:0.7rem;">IHDS</p>
+            <p class="body-sm" style="font-weight:600; font-size:0.82rem;">Individual Rave Analysis</p>
+          </div>
+          <div class="card-sm" style="padding:12px 14px;">
+            <p class="label text-accent" style="margin-bottom:4px; font-size:0.7rem;">BG5BI</p>
+            <p class="body-sm" style="font-weight:600; font-size:0.82rem;">Foundation Instructor</p>
+          </div>
+          <div class="card-sm" style="padding:12px 14px;">
+            <p class="label text-accent" style="margin-bottom:4px; font-size:0.7rem;">BG5BI</p>
+            <p class="body-sm" style="font-weight:600; font-size:0.82rem;">Career & Business Consultant</p>
+          </div>
+          <div class="card-sm" style="padding:12px 14px;">
+            <p class="label text-accent" style="margin-bottom:4px; font-size:0.7rem;">BG5BI</p>
+            <p class="body-sm" style="font-weight:600; font-size:0.82rem;">Career & Business Cycles</p>
+          </div>
+          <div class="card-sm" style="padding:12px 14px;">
+            <p class="label text-accent" style="margin-bottom:4px; font-size:0.7rem;">BG5BI</p>
+            <p class="body-sm" style="font-weight:600; font-size:0.82rem;">Profit Potential Coach</p>
+          </div>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:4px;">
+          <a href="https://www.ihdschool.com/professionals" target="_blank" class="btn btn-outline btn-sm" style="font-size:0.78rem;" data-en="Verify Sean's License · IHDS →">
+            ตรวจสอบ License ของ Sean, IHDS →
+          </a>
+          <a href="https://bg5businessinstitute.com/professionals" target="_blank" class="btn btn-outline btn-sm" style="font-size:0.78rem;" data-en="Verify Sean's License · BG5BI →">
+            ตรวจสอบ License ของ Sean, BG5BI →
+          </a>
+        </div>
+        <p style="font-size:0.72rem; color:var(--ink-mid); margin-top:4px;" data-en='Search "Sean Michael" on the professionals page'>ค้นหา "Sean Michael" ในหน้า professionals</p>
+        <a href="https://www.innerblueprint.net/contact" target="_blank" class="btn btn-outline btn-sm" style="margin-top:16px;" data-en="Book a Session with Sean →">Book a Session with Sean →</a>
+      </div>
+      <div class="feature-split-image">
+        <span class="has-sticker" style="display:inline-block;"><img loading="lazy" src="assets/sean-avatar.png" alt="Sean Michael, Instructor"class="portrait-bw"><img loading="lazy" src="assets/stickers/star4-sky.svg" alt="" class="sticker sticker--tr" data-drift="16" width="50" height="50"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO FOR / NOT FOR -->
+<section style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header center">
+      <p class="label text-accent">Who This Is For</p>
+      <h2 class="h2" style="margin-top:10px;">This Is for People Like You</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <p class="label text-accent" style="margin-bottom:16px;">This Is For You ✓</p>
+        <ul class="learn-list">
+          <li data-en="You work hard but feel like you're not getting anywhere">คนที่รู้สึกว่าตัวเองทำงานหนักแต่ยังไปไม่ถึงไหน</li>
+          <li data-en="You've changed jobs often and want to find a direction that actually fits">คนที่เปลี่ยนงานบ่อยและอยากหาทิศทางที่ใช่</li>
+          <li data-en="You want to understand yourself practically, not just theoretically">คนที่อยากเข้าใจตัวเองในเชิงปฏิบัติ ไม่ใช่แค่ทฤษฎี</li>
+          <li data-en="You're ready to observe yourself. You don't need a ready-made answer">คนที่พร้อมทดลองสังเกตตัวเอง ไม่ต้องการคำตอบสำเร็จรูป</li>
+          <li data-en="You feel different from others and want to understand that">คนที่รู้สึกว่าตัวเองแตกต่างจากคนอื่น และอยากเข้าใจตรงนั้น</li>
+          <li data-en="Entrepreneurs or freelancers who want to work in a way that fits them better">ผู้ประกอบการหรือ freelancer ที่อยากทำงานให้เหมาะกับตัวเองมากขึ้น</li>
+        </ul>
+      </div>
+      <div class="card">
+        <p class="label" style="color:var(--ink-mid); margin-bottom:16px;">Maybe Not For You ✗</p>
+        <ul class="learn-list">
+          <li><span style="color:var(--ink-mid);" data-en="You want a formula that works instantly">ต้องการสูตรสำเร็จที่ทำตามแล้วได้ผลทันที</span></li>
+          <li><span style="color:var(--ink-mid);" data-en="You want someone to tell you what to do at every step">ต้องการให้ใครบอกว่าต้องทำอะไรทุกขั้นตอน</span></li>
+          <li><span style="color:var(--ink-mid);" data-en="You want motivation and hype more than understanding">ต้องการ motivation หรือ hype มากกว่าความเข้าใจ</span></li>
+          <li><span style="color:var(--ink-mid);" data-en="You're not ready to question what you've always believed">ไม่พร้อมตั้งคำถามกับสิ่งที่ตัวเองเคยเชื่อ</span></li>
+        </ul>
+        <div class="divider"></div>
+        <p class="body-sm text-mid" data-en="Not a judgement. Just want to be clear about what this is and isn't, so you can make the right call for yourself.">
+          ไม่ใช่การตัดสิน<br>
+          แค่อยากให้รู้ว่าที่นี่เป็นอะไรและไม่ใช่อะไร
+          เพื่อให้คุณตัดสินใจได้ถูกต้อง
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT / CTA -->
+<section style="padding: 0 0 80px;">
+  <div class="container">
+    <div class="cta-band">
+      <p class="label" style="color:rgba(255,255,255,0.6); margin-bottom:16px;">The Unpopular Club</p>
+      <h2 class="h2" style="max-width:680px; margin:0 auto 16px;">
+        <span>We're not saying our way is the right way.<br>Just that it's a different angle<br>that might help you see yourself more clearly.</span>
+      </h2>
+      <p data-en="We don't expect you to believe everything on this website. We'd just like you to observe yourself, then decide from your own experience.">
+        เราไม่ได้คาดหวังให้คุณเชื่อทุกอย่างบนเว็บไซต์นี้
+        เราแค่อยากชวนให้ลองสังเกตตัวเอง แล้วตัดสินใจจากประสบการณ์ของคุณเอง
+      </p>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:32px;">
+        <a href="living-your-design.html" class="btn btn-cream btn-lg">Start with Living Your Design</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>เข้าใจตัวเอง แล้วตัดสินใจง่ายขึ้น</span><img loading="lazy" src="assets/stickers/star4-butter.svg" alt="" width="20" height="20">
+    <span>The Unpopular Club</span><img loading="lazy" src="assets/stickers/star5-pink.svg" alt="" width="20" height="20">
+    <span>Human Design · BG5 · Bangkok</span><img loading="lazy" src="assets/stickers/burst-sky.svg" alt="" width="20" height="20">
+    <span>เข้าใจตัวเอง แล้วตัดสินใจง่ายขึ้น</span><img loading="lazy" src="assets/stickers/star4-butter.svg" alt="" width="20" height="20">
+    <span>The Unpopular Club</span><img loading="lazy" src="assets/stickers/star5-pink.svg" alt="" width="20" height="20">
+    <span>Human Design · BG5 · Bangkok</span><img loading="lazy" src="assets/stickers/burst-sky.svg" alt="" width="20" height="20">
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <img loading="lazy" src="assets/Unpop logo.png" alt="The Unpopular Club" class="footer-logo">
+        <p class="footer-brand-desc">
+          A space for people who want to understand themselves more clearly, so they can make better decisions in life, work and business.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h5>Start</h5>
+        <ul class="footer-links">
+          <li><a href="chart-check.html" data-en="Free Chart Check">เช็ก Chart ฟรี</a></li>
+          <li><a href="living-your-design.html">Living Your Design</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>More</h5>
+        <ul class="footer-links">
+          <li><a href="for-teams.html" data-en="For Teams">สำหรับองค์กร</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" data-en="Contact">ติดต่อ</a></li>
+          <li><a href="https://www.patreon.com/cw/unpop_club" target="_blank">Patreon</a></li>
+          <li><a href="https://jovianarchive.com/pages/get-your-human-design-chart" target="_blank" data-en="Check Your BodyGraph">เช็ค BodyGraph ของคุณ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Follow</h5>
+        <ul class="footer-links">
+          <li><a href="https://lin.ee/SA9Fq39" target="_blank">LINE</a></li>
+          <li><a href="https://www.instagram.com/unpop_club" target="_blank">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@unpop_club" target="_blank">YouTube</a></li>
+          <li><a href="https://www.tiktok.com/@unpop_club" target="_blank">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 The Unpopular Club · Bangkok, Thailand</span>
+      <div style="display:flex; gap:20px; flex-wrap:wrap; align-items:center;">
+        <a href="privacy-policy.html" style="color:inherit; opacity:0.75; font-size:0.8rem; text-decoration:none;">Privacy Policy</a>
+        <a href="terms-conditions.html" style="color:inherit; opacity:0.75; font-size:0.8rem; text-decoration:none;">Terms &amp; Conditions</a>
+        <a href="disclaimer.html" style="color:inherit; opacity:0.75; font-size:0.8rem; text-decoration:none;">Disclaimer</a>
+        <a href="#cookie-settings" style="color:inherit; opacity:0.75; font-size:0.8rem; text-decoration:none;">Cookie Settings</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="scroll.js"></script>
+<script src="interactive.js"></script>
+<script src="consent.js"></script>
+</body>
+</html>

@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BG5 Foundation | The Unpopular Club</title>
+  <meta name="description" content="คอร์ส BG5 Foundation Online 2 Semesters 20 Classes, Human Design for Work, Business & Profit สอนโดย Sean ผู้ได้รับใบอนุญาตสอนจาก BG5 Business Institute">
+  <link rel="icon" href="assets/logo/mark-favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="assets/logo/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/logo/favicon-180.png">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── BG5 PAGE–SPECIFIC OVERRIDES ── */
+    .sem-tabs { display:flex; gap:0; border:1px solid var(--border-bold); border-radius:var(--radius-lg); overflow:hidden; margin-bottom:40px; box-shadow:var(--shadow-xs); }
+    .sem-tab {
+      flex:1; padding:16px 20px; background:var(--white); border:none; font-family:var(--font);
+      font-size:0.875rem; font-weight:700; color:var(--ink-mid); cursor:pointer; transition:all 0.15s;
+      border-right:1px solid var(--border-bold);
+    }
+    .sem-tab:last-child { border-right:none; }
+    .sem-tab.active { background:var(--ink); color:var(--cream); }
+    .sem-panel { display:none; }
+    .sem-panel.active { display:block; }
+
+    .class-item { background:var(--white); border-bottom:1px solid var(--divider); }
+    .class-item:last-child { border-bottom:none; }
+    .class-question {
+      width:100%; display:flex; justify-content:space-between; align-items:center;
+      padding:22px 28px; background:none; border:none; font-family:var(--font);
+      font-size:0.9375rem; font-weight:600; color:var(--ink); cursor:pointer; text-align:left; gap:16px;
+      transition:background 0.15s;
+    }
+    .class-question:hover { background:var(--cream); }
+    .class-num { color:var(--accent); font-size:0.75rem; font-weight:800; letter-spacing:0.08em; flex-shrink:0; min-width:52px; }
+    .class-icon {
+      flex-shrink:0; width:28px; height:28px; border:1px solid var(--border-bold); border-radius:50%;
+      display:flex; align-items:center; justify-content:center; transition:all 0.25s; font-size:1rem; color:var(--ink-mid); font-weight:700;
+    }
+    .class-item.open .class-icon { background:var(--ink); color:var(--cream); border-color:var(--ink); transform:rotate(45deg); }
+    .class-answer {
+      max-height:0; overflow:hidden; transition:max-height 0.4s ease, padding 0.3s;
+      padding:0 28px; color:var(--ink-mid); font-size:0.9375rem; line-height:1.85;
+    }
+    .class-item.open .class-answer { max-height:300px; padding:4px 28px 24px; }
+
+    .trust-strip {
+      background:var(--brand-dark); border-radius:var(--radius-md);
+      padding:20px 32px; display:flex; align-items:center; gap:24px; flex-wrap:wrap; justify-content:center; text-align:center;
+    }
+    .trust-sep { color:rgba(255,255,255,0.15); font-size:1.25rem; }
+
+    .outcome-card {
+      background:var(--white); border:1px solid var(--border-bold); border-radius:var(--radius-xl);
+      padding:36px; box-shadow:var(--shadow-md); display:flex; flex-direction:column; gap:16px;
+      transition:transform 0.2s, box-shadow 0.2s;
+    }
+    .outcome-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+    .outcome-ceu {
+      display:inline-flex; align-items:center; gap:8px;
+      background:var(--hl-teal); border:1px solid rgba(255,212,59,.3); border-radius:var(--radius-sm);
+      padding:6px 16px;
+    }
+    .outcome-ceu-num { font-size:1.5rem; font-weight:800; color:var(--accent); }
+    .outcome-ceu-label { font-size:0.75rem; color:var(--accent); font-weight:700; letter-spacing:0.06em; }
+
+    .compare-table { width:100%; border-collapse:collapse; }
+    .compare-table th, .compare-table td { padding:16px 20px; border:1px solid var(--border-bold); font-size:0.875rem; }
+    .compare-table thead th { background:var(--brand-dark); color:var(--cream); font-weight:700; text-align:center; }
+    .compare-table thead th:first-child { text-align:left; }
+    .compare-table td { background:var(--white); color:var(--ink-mid); text-align:center; }
+    .compare-table td:first-child { text-align:left; font-weight:600; color:var(--ink); background:var(--cream); }
+    .compare-table tr:hover td { background:var(--accent-light); }
+    .compare-table tr:hover td:first-child { background:var(--accent-light); }
+    .check { color:var(--sage); font-weight:800; }
+    .cross { color:var(--ink-mid); }
+    .hl { background:var(--accent-light) !important; }
+    .compare-table thead th.hl { background:var(--accent) !important; }
+
+    @media (max-width: 768px) {
+      /* hero wide image → 16:9 on mobile */
+      .bg5-hero-img { aspect-ratio: 16/9 !important; }
+      /* prerequisite card: stack vertically on mobile */
+      .prereq-card {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+        padding: 28px 22px !important;
+      }
+      .prereq-card > div:last-child { flex-shrink: 0; }
+      .prereq-card a.btn { width: 100%; justify-content: center; max-width: 320px; }
+      /* IACET card */
+      .iacet-card { flex-direction: column !important; padding: 28px 22px !important; gap: 24px !important; align-items: flex-start !important; }
+      .iacet-card > div:first-child { width: 120px !important; }
+      .class-question { padding:18px 20px; gap:10px; min-height:60px; }
+      .class-num { min-width:44px; font-size:0.6875rem; }
+      .class-answer { padding:0 20px !important; font-size:0.875rem; }
+      .class-item.open .class-answer { padding:6px 20px 22px !important; }
+      .trust-strip { padding:16px 20px; gap:12px; }
+      .trust-sep { display:none; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">ข้ามไปเนื้อหา</a>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  <a href="https://www.patreon.com/cw/unpop_club" target="_blank">
+    <span class="ann-badge">FREE</span>
+    Workshop: "Why You Feel Lost"
+    <span class="ann-sep">·</span>
+    Sun, 26 Jul 2026 &nbsp;·&nbsp; 18:00–20:00
+    <span class="ann-sep">·</span>
+    Join Free →
+  </a>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo/unpop-ui-ink.svg" alt="The Unpopular Club">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Start Here</a></li>
+      <li><a href="chart-check.html" data-en="Free Chart Check">เช็ก Chart ฟรี</a></li>
+      <li><a href="living-your-design.html">Living Your Design</a></li>
+      <li><a href="for-professionals.html" data-en="Certification">Certification</a></li>
+      <li><a href="for-teams.html" data-en="For Teams">สำหรับองค์กร</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><div class="lang-toggle"><button class="lang-opt lang-opt-th">TH</button><button class="lang-opt lang-opt-en">EN</button></div></li>
+      <li><a href="chart-check.html" class="nav-cta" data-en="Free Chart Check →">เช็ก Chart ฟรี →</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Flyout overlay -->
+<div class="flyout-overlay" id="flyout-overlay"></div>
+
+<!-- Flyout drawer -->
+<div class="nav-mobile" id="flyout-drawer">
+    <div class="flyout-header">
+      <img loading="lazy" src="assets/logo/unpop-ui-ink.svg" alt="The Unpopular Club" class="flyout-logo">
+      <button class="flyout-close" id="flyout-close" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="flyout-links">
+    <a href="index.html">Start Here</a>
+    <a href="chart-check.html" data-en="Free Chart Check">เช็ก Chart ฟรี</a>
+    <a href="living-your-design.html">Living Your Design</a>
+    <a href="bg5-foundation.html" class="active">BG5 Foundation</a>
+    <a href="for-professionals.html" data-en="Certification">Certification</a>
+    <a href="for-teams.html" data-en="For Teams">สำหรับองค์กร</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" data-en="Contact">ติดต่อ</a>
+    </nav>
+    <div class="flyout-cta">
+      <a href="https://www.patreon.com/cw/unpop_club" target="_blank" class="btn btn-cream btn-sm" style="text-align:center; justify-content:center;">Member Area →</a>
+      <div class="flyout-lang">
+        <button class="lang-opt lang-opt-th">TH</button>
+        <button class="lang-opt lang-opt-en">EN</button>
+      </div>
+    </div>
+  </div>
+
+<!-- ─── HERO ─────────────────────────────────────── -->
+<section id="main-content" class="page-hero">
+  <a href="contact.html" class="page-hero-img-link" aria-label="Inquire about BG5 Foundation">
+    <div class="page-hero-bg" style="background-image:url(assets/BG5-cover-156.jpg); background-position:center top;"></div>
+    <div class="page-hero-overlay"></div>
+  </a>
+  <div class="container page-hero-content">
+    <div class="page-hero-inner has-sticker">
+      <img loading="lazy" src="assets/stickers/eye-butter.svg" alt="" class="sticker sticker--tr" data-drift="22" width="70" height="70">
+      <span class="page-hero-badge page-hero-badge--inquire">OPEN FOR INQUIRY</span>
+      <p class="page-hero-eyebrow">Online Course · 2 Semesters · 20 Classes</p>
+      <h1 class="page-hero-title">BG5 Foundation</h1>
+      <p class="page-hero-sub" data-en="Everyone has ways of working that actually work, and ways that drain energy for nothing. BG5 helps you see that difference clearly.">ทุกคนมีวิธีทำงานที่ได้ผล และวิธีที่สิ้นเปลืองพลังงานโดยเปล่าประโยชน์ BG5 ช่วยให้เห็นความต่างนั้นชัดขึ้น</p>
+      <div class="page-hero-meta">
+        <span class="page-hero-meta-item">Online · Live</span>
+        <span class="page-hero-meta-sep">·</span>
+        <span class="page-hero-meta-item">6.4 IACET CEUs</span>
+        <span class="page-hero-meta-sep">·</span>
+        <span class="page-hero-meta-item">$1,250 USD</span>
+        <span class="page-hero-meta-sep">·</span>
+        <span class="page-hero-meta-item" data-en="Prerequisite: LVD">Prerequisite: LVD</span>
+      </div>
+      <div class="page-hero-actions">
+        <a href="contact.html" class="btn btn-cream btn-lg">Inquire &amp; Enroll →</a>
+        <a href="#curriculum" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,0.35); color:#fff;" data-en="View Curriculum">ดู Curriculum</a>
+      </div>
+    </div>
+  </div>
+  <div class="page-hero-hint">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    Inquire →
+  </div>
+</section>
+
+<!-- ─── IACET TRUST STRIP ─────────────────────────── -->
+<section style="padding:48px 0 72px;">
+  <div class="container">
+    <div class="trust-strip">
+      <span style="font-size:0.6875rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.82);">Accredited Curriculum</span>
+      <span class="trust-sep">|</span>
+      <span style="color:var(--cream); font-size:0.9rem;" data-en="Curriculum from &lt;strong&gt;BG5 Business Institute&lt;/strong&gt;, IACET Accredited Provider since 2022">
+        Curriculum จาก <strong>BG5 Business Institute</strong>, IACET Accredited Provider ตั้งแต่ปี 2022
+      </span>
+      <span class="trust-sep">|</span>
+      <span style="color:rgba(255,255,255,0.82); font-size:0.8rem;">Accreditation No. 5660340-1 · Valid through Sep 2027</span>
+      <span class="trust-sep">|</span>
+      <a href="https://bg5businessinstitute.com" target="_blank" style="color:rgba(255,255,255,0.90); font-size:0.8rem; text-decoration:underline; text-decoration-color:rgba(255,255,255,0.5);">
+        bg5businessinstitute.com →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY THIS COURSE EXISTS ────────────────────── -->
+<section style="padding:0 0 80px;">
+  <div class="container">
+    <div class="editorial-card">
+      <p class="label" style="color:var(--accent); margin-bottom:20px;">Why BG5 Exists</p>
+      <h2 class="display" style="max-width:760px; margin:0 auto;">
+        <span>Working Hard ≠ Being Productive</span>
+      </h2>
+      <p style="margin-top:24px; max-width:600px; margin-left:auto; margin-right:auto;" data-en="A lot of people give everything, and still feel like they're going nowhere.<br>Some work 10-hour days and feel exhausted the whole time.<br>Some manage teams but can't figure out why people perform so differently.">
+        หลายคนทุ่มเทมาก แต่รู้สึกว่าไม่ได้ไปไหน<br>
+        บางคนทำงาน 10 ชั่วโมงต่อวัน แต่ exhausted ตลอด<br>
+        บางคนบริหารทีม แต่ไม่เข้าใจว่าทำไมคนแต่ละคนถึง perform ต่างกัน
+      </p>
+      <p style="margin-top:20px; max-width:600px; margin-left:auto; margin-right:auto;" data-en="BG5 is Human Design built specifically for the world of work and business.<br>Not just to know your Type, but to &lt;em style=&quot;font-style:normal; font-weight:600; color:var(--accent);&quot;&gt;understand how you work, lead, and build.&lt;/em&gt;">
+        BG5 คือ Human Design ในเวอร์ชันที่ถูก design มาสำหรับโลกของงานและธุรกิจโดยตรง<br>
+        ไม่ใช่แค่รู้จัก Type ของตัวเอง แต่เพื่อ <em style="font-style:normal; font-weight:600; color:var(--accent);">วิเคราะห์ว่าคุณทำงาน เป็นทีม และสร้างธุรกิจได้อย่างไร</em>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 4 PROMISE CARDS ────────────────────────────── -->
+<section style="padding:0 0 80px;">
+  <div class="container">
+    <div class="section-header center" style="margin-bottom:40px;">
+      <p class="label text-accent">After This Course</p>
+      <h2 class="h2" style="margin-top:12px;">What We Promise</h2>
+    </div>
+    <div class="value-strip" style="border: 1px solid var(--border-bold); border-radius:var(--radius-lg); overflow:hidden; box-shadow: var(--shadow-md);">
+      <div class="value-item" style="border-radius:0;">
+        <div class="value-item-icon" style="margin:0 auto 16px; display:flex; align-items:center; justify-content:center;">
+          <img loading="lazy" src="assets/emoji coure overview.png" alt="" width="48" height="48" style="object-fit:contain;">
+        </div>
+        <h4>Read Career Designs</h4>
+        <p data-en="Analyze Career Type, Strategy, Authority and Career Orientation. For yourself and for others.">วิเคราะห์ Career Type, Strategy, Authority และ Career Orientation ของตัวเองและคนอื่นได้จริง</p>
+      </div>
+      <div class="value-item" style="border-radius:0;">
+        <div class="value-item-icon" style="margin:0 auto 16px; display:flex; align-items:center; justify-content:center;">
+          <img loading="lazy" src="assets/emoji who's this for.png" alt="" width="48" height="48" style="object-fit:contain;">
+        </div>
+        <h4>Understand Team Dynamics</h4>
+        <p data-en="See why some teams work well together and others don't, and build teams more intentionally.">เห็นว่าทำไมบางทีมทำงานร่วมกันได้ดี บางทีมไม่ได้ และออกแบบทีมได้ดีขึ้น</p>
+      </div>
+      <div class="value-item" style="border-radius:0;">
+        <div class="value-item-icon" style="margin:0 auto 16px; display:flex; align-items:center; justify-content:center;">
+          <img loading="lazy" src="assets/emoji what'll you get.png" alt="" width="48" height="48" style="object-fit:contain;">
+        </div>
+        <h4>Identify Your Profit Potential</h4>
+        <p data-en="Know where your Profit Centers are and what work / business structures fit you best.">รู้ว่า Profit Center ของตัวเองอยู่ที่ไหน และโครงสร้างงาน / ธุรกิจแบบไหนที่เหมาะกับคุณ</p>
+      </div>
+      <div class="value-item" style="border-radius:0;">
+        <div class="value-item-icon" style="margin:0 auto 16px; display:flex; align-items:center; justify-content:center;">
+          <img loading="lazy" src="assets/emoji certificate.png" alt="" width="48" height="48" style="object-fit:contain;">
+        </div>
+        <h4>Path to Certification</h4>
+        <p data-en="This course is the required prerequisite for the BG5 Certification pathway with BG5 Business Institute.">คอร์สนี้เป็น prerequisite ที่จำเป็นสำหรับ BG5 Certification pathway กับ BG5 Business Institute</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LVD PREREQUISITE CTA ───────────────────────── -->
+<section style="padding:0 0 80px;">
+  <div class="container">
+    <div class="prereq-card" style="background:var(--cream-mid); border: 1px solid var(--border-bold); border-radius:var(--radius-lg); padding:40px 48px; display:grid; grid-template-columns:1fr auto; gap:32px; align-items:center;">
+      <div>
+        <p class="label text-accent" style="margin-bottom:12px;">Prerequisite</p>
+        <h3 class="h3" style="margin-bottom:16px;">Living Your Design (LVD) is Required Before BG5 Foundation</h3>
+        <p class="body-md text-mid" style="margin-bottom:14px;" data-en="BG5 Foundation builds directly on Human Design foundations: Type, Strategy, Authority and Centers.">
+          เพราะ BG5 Foundation ต่อยอดจากพื้นฐานของ Human Design โดยเฉพาะเรื่อง Type, Strategy, Authority และ Centers
+        </p>
+        <p class="body-md text-mid" style="margin-bottom:14px;" data-en="Living Your Design (LVD) is the first course that helps you understand the Human Design system through your own real life, by experimenting with Strategy &amp; Authority in everyday decisions, until you start to notice whether you feel less frustrated, angry, or disappointed in yourself.">
+          Living Your Design (LVD) คือคอร์สแรกที่ช่วยให้เราเข้าใจระบบของ Human Design จริงๆ ว่าเราใช้ผ่านชีวิตจริงของตัวเราเองยังไง โดยลองใช้ Strategy &amp; Authority ตัดสินใจในชีวิตประจำวัน จนเริ่มเห็นว่าเราผิดหวัง โกรธ หงุดหงิด หรือนอยด์กับตัวเองน้อยลงยัง
+        </p>
+        <p class="body-md text-mid" style="margin-bottom:14px;" data-en="Once you've experienced Human Design through LVD, BG5 Foundation goes much deeper, because BG5 applies Human Design to the tangible: work, career, money, collaboration, and material success.">
+          เมื่อเราได้ใช้ Human Design จากความรู้ LVD แล้ว การเรียน BG5 Foundation จะเข้าใจลึกขึ้น เพราะ BG5 คือการเอา Human Design มาใช้กับเรื่องที่จับต้องได้มากขึ้น เช่น งาน อาชีพ การเงิน การทำงานร่วมกับคนอื่น และ material success
+        </p>
+        <p class="body-md text-mid" data-en="LVD is the essential starting point before BG5 Foundation, where you explore work, finances and real-world success systematically.">
+          LVD จึงเป็นจุดเริ่มต้นสำคัญ ก่อนต่อยอดเข้าสู่ BG5 Foundation และการเรียนเรื่องงาน การเงิน หรือความสำเร็จในโลกจริงอย่างเป็นระบบ
+        </p>
+      </div>
+      <div style="flex-shrink:0;">
+        <a href="living-your-design.html" class="btn btn-primary btn-lg">Start with LVD →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── COURSE STRUCTURE OVERVIEW ─────────────────── -->
+<section id="curriculum" style="padding:0 0 56px;">
+  <div class="container">
+    <div class="section-header center" style="margin-bottom:48px;">
+      <p class="label text-accent">Course Structure</p>
+      <h2 class="h2" style="margin-top:12px;">2 Semesters · 20 Classes</h2>
+      <p class="body-md text-mid" style="margin-top:14px; max-width:520px; margin-left:auto; margin-right:auto;" data-en="Each Semester has 10 live online classes with Sean. Recordings available for review. Each Semester carries IACET CEUs.">
+        แต่ละ Semester มี 10 Classes เรียนออนไลน์ Live กับ Sean<br>
+        มี recording ให้ดูย้อนหลัง และ IACET CEU สำหรับแต่ละ Semester
+      </p>
+    </div>
+    <div class="grid-2" style="gap:24px; align-items:stretch;">
+      <div style="background:var(--white); border: 1px solid var(--border-bold); border-radius:var(--radius-lg); padding:40px; box-shadow: var(--shadow-md); display:flex; flex-direction:column; gap:20px;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <div>
+            <p class="label text-accent" style="margin-bottom:10px;">Semester 1</p>
+            <h3 class="h3">BG5 Foundations</h3>
+          </div>
+          <div class="outcome-ceu" style="flex-shrink:0;">
+            <span class="outcome-ceu-num">3.1</span>
+            <span class="outcome-ceu-label">IACET<br>CEUs</span>
+          </div>
+        </div>
+        <p class="body-md text-mid" data-en="Learn BG5 fundamentals from Career Type, Strategy, Authority through Centers, Channels, Gates, and Profit Potential Assessment.">
+          เรียนรู้พื้นฐาน BG5 ตั้งแต่ Career Type, Strategy, Authority ไปจนถึง Centers, Channels, Gates และ Profit Potential Assessment
+        </p>
+        <ul class="learn-list" style="gap:10px;">
+          <li data-en="5 Career Types &amp; Strategy in work context">5 Career Types &amp; Strategy ในบริบทงาน</li>
+          <li data-en="Authority for career decision-making">Authority สำหรับการตัดสินใจเรื่องอาชีพ</li>
+          <li data-en="Career Orientation (Profile)">Career Orientation (Profile)</li>
+          <li data-en="Centers, Channels &amp; Gates in business">Centers, Channels &amp; Gates ในธุรกิจ</li>
+          <li data-en="Profit Potential Assessment">Profit Potential Assessment</li>
+        </ul>
+        <div style="margin-top:auto; padding-top:8px;">
+          <a href="https://drive.google.com/file/d/1CzMjba4wiK88cjPjsSP4Xb24t6XFf79L/view" target="_blank" class="btn btn-outline btn-sm">
+            <span data-en="View Learning Outcomes →">ดู Learning Outcomes →</span>
+          </a>
+        </div>
+      </div>
+      <div style="background:var(--brand-dark); border: 1px solid transparent; border-radius:var(--radius-lg); padding:40px; box-shadow:var(--shadow-lg); display:flex; flex-direction:column; gap:20px; color:var(--cream);">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <div>
+            <p style="font-size:0.6875rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent-light); margin-bottom:10px; display:inline-block; border: 1px solid rgba(255,255,255,0.4); padding:3px 10px; border-radius:var(--radius-sm);">Semester 2</p>
+            <h3 class="h3" style="color:var(--cream);">Advanced Career Design</h3>
+          </div>
+          <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius:var(--radius-sm); padding:6px 16px; flex-shrink:0;">
+            <span style="font-size:1.5rem; font-weight:800; color:var(--accent-light);">3.3</span>
+            <span style="font-size:0.75rem; color:rgba(255,255,255,0.88); font-weight:700; letter-spacing:0.06em; line-height:1.3;">IACET<br>CEUs</span>
+          </div>
+        </div>
+        <p style="color:rgba(255,255,255,0.88); line-height:1.75;" data-en="Apply Semester 1 foundations in practice: OC16, Penta and Partnership Analysis through Career &amp; Business Cycles.">
+          นำ foundation จาก Semester 1 มาใช้จริง ตั้งแต่ OC16, Penta, Partnership Analysis ไปจนถึง Career &amp; Business Cycles
+        </p>
+        <ul style="display:flex; flex-direction:column; gap:10px; list-style:none;">
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:0.9375rem; color:rgba(255,255,255,0.88); line-height:1.65;" data-en="&lt;span style='color:var(--sage); font-weight:800; flex-shrink:0;'&gt;✓&lt;/span&gt;OC16 · 16 Roles in Organisation"><span style="color:var(--sage); font-weight:800; flex-shrink:0;">✓</span>OC16 · 16 บทบาทในองค์กร</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:0.9375rem; color:rgba(255,255,255,0.88); line-height:1.65;"><span style="color:var(--sage); font-weight:800; flex-shrink:0;">✓</span>Penta &amp; WA · Small &amp; Large Group Dynamics</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:0.9375rem; color:rgba(255,255,255,0.88); line-height:1.65;"><span style="color:var(--sage); font-weight:800; flex-shrink:0;">✓</span>Career &amp; Business Cycles</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:0.9375rem; color:rgba(255,255,255,0.88); line-height:1.65;"><span style="color:var(--sage); font-weight:800; flex-shrink:0;">✓</span>Partnership &amp; Team Analysis</li>
+          <li style="display:flex; gap:10px; align-items:flex-start; font-size:0.9375rem; color:rgba(255,255,255,0.88); line-height:1.65;"><span style="color:var(--sage); font-weight:800; flex-shrink:0;">✓</span>Career Analysis &amp; Consulting Basics</li>
+        </ul>
+        <div style="margin-top:auto; padding-top:8px;">
+          <a href="https://drive.google.com/file/d/1rAydFVi7q8XlfMiPt9yuwhh8TzqGvhgr/view" target="_blank" class="btn btn-cream btn-sm">
+            <span data-en="View Learning Outcomes →">ดู Learning Outcomes →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SEMESTER CLASS ACCORDION ─────────────────── -->
+<section style="padding:0 0 80px;">
+  <div class="container">
+    <!-- Tabs -->
+    <div class="sem-tabs" id="sem-tabs">
+      <button class="sem-tab active" data-target="sem1">Semester 1 · BG5 Foundations (10 Classes)</button>
+      <button class="sem-tab" data-target="sem2">Semester 2: Advanced Career Design (10 Classes)</button>
+    </div>
+
+    <!-- Semester 1 -->
+    <div class="sem-panel active" id="sem1">
+      <div style="border: 1px solid var(--border-bold); border-radius:var(--radius-lg); overflow:hidden;">
+        <!-- Class 1 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 01</span>
+            <span style="flex:1;">Introduction to BG5 Career Design</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="Discover how BG5 differs from Human Design and why it was designed specifically for work and business. Overview of career analysis and how BG5 reads the body and energy in a professional context.">ทำความรู้จัก BG5 ว่าแตกต่างจาก Human Design อย่างไร และทำไมถึงถูก design มาสำหรับโลกของงานและธุรกิจ ภาพรวมของ career analysis และวิธีที่ BG5 มองร่างกายและพลังงานในบริบทอาชีพ</p>
+          </div>
+        </div>
+        <!-- Class 2 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 02</span>
+            <span style="flex:1;">5 Career Types &amp; Strategy</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="Deep-dive into all 5 Career Types: Initiator, Builder, Advisor, Evaluator, and Innovator, including each Type's Strategy and how each should initiate, decide, and work for maximum results.">วิเคราะห์ Career Type ทั้ง 5 แบบ: Initiator, Builder, Advisor, Evaluator และ Innovator รวมถึง Strategy ของแต่ละ Type และวิธีที่แต่ละ Type ควรเริ่มต้น ตัดสินใจ และทำงานให้ได้ผลลัพธ์สูงสุด</p>
+          </div>
+        </div>
+        <!-- Class 3 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 03</span>
+            <span style="flex:1;">Authority in Career &amp; Business Decisions</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="How to use Authority in career, business, and direction decisions: how much time each Authority needs before deciding, and what the right signal feels like for each type.">เรียนรู้การใช้ Authority ตัดสินใจเรื่องงาน ธุรกิจ และทิศทางอาชีพ ว่าแต่ละ Authority ควรใช้เวลาตัดสินใจอย่างไร และอะไรคือสัญญาณที่ใช่สำหรับแต่ละคน</p>
+          </div>
+        </div>
+        <!-- Class 4 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 04</span>
+            <span style="flex:1;">Career Orientation (Profile)</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="Analyze Career Orientation from all 12 Profiles to identify the right career direction, role in work, and how each Profile learns and develops in a professional context.">วิเคราะห์ Career Orientation จาก Profile ทั้ง 12 แบบ เพื่อเห็นทิศทางอาชีพที่เหมาะสม บทบาทในทีม และวิธีที่แต่ละ Profile เรียนรู้และพัฒนาตัวเองในบริบทอาชีพ</p>
+          </div>
+        </div>
+        <!-- Class 5 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 05</span>
+            <span style="flex:1;" data-en="9 Centers in Work &amp; Business Context">9 Centers ในบริบทงานและธุรกิจ</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="Explore all 9 Centers through the lens of work and business. How defined and undefined Centers affect work energy, pressure perception, and the way each person interacts with their professional environment.">ดู 9 Centers ในมุมของงานและธุรกิจ Centers ที่ defined และ undefined ส่งผลต่อพลังงานตอนทำงาน การรับรู้ภาวะกดดัน และวิธีที่คนแต่ละคน interact กับสภาพแวดล้อมการทำงานอย่างไร</p>
+          </div>
+        </div>
+        <!-- Class 6 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 06</span>
+            <span style="flex:1;">Channels &amp; Career Potential</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="Analyze career-relevant Channels: what each Channel reflects about natural strengths, energy, and work potential, and how to read Channels in connection with real professional skills.">วิเคราะห์ Channels ที่มีผลต่อ Career แต่ละ Channel สะท้อนความถนัด พลังงาน และศักยภาพแบบไหน และวิธีอ่าน Channel ให้เชื่อมกับทักษะอาชีพได้จริง</p>
+          </div>
+        </div>
+        <!-- Class 7 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 07</span>
+            <span style="flex:1;">Gates &amp; Business Implications</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="Explore Gates with significant meaning in business and teamwork contexts. Understand which Gates relate to leadership, communication, selling, managing, and building.">ดู Gates ที่สำคัญกับเรื่องธุรกิจและการทำงานร่วมกัน เข้าใจว่า Gates ใดที่เกี่ยวข้องกับ leadership, communication, selling, managing และ building</p>
+          </div>
+        </div>
+        <!-- Class 8 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 08</span>
+            <span style="flex:1;">Profit Potential Assessment</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="Learn how to read Profit Centers and identify where each person's Profit Potential lies. What income structures fit your Career Design, and why each person's path to profit looks different.">เรียนรู้วิธีอ่าน Profit Center และวิเคราะห์ว่า Profit Potential ของแต่ละคนอยู่ที่ไหน โครงสร้างรายได้แบบไหนที่เหมาะกับ Career Design ของตัวเอง และทำไม "รูปแบบการหาเงิน" ของแต่ละคนถึงต่างกัน</p>
+          </div>
+        </div>
+        <!-- Class 9 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 09</span>
+            <span style="flex:1;">Reading Your Career Design Chart</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="Practice reading a Career Design Chart holistically, combining everything from Semester 1 to read a chart with real meaning and practical application.">ฝึกอ่าน Career Design Chart แบบบูรณาการ นำทุก element ที่เรียนมาใน Semester 1 มาประกอบกัน เพื่ออ่าน chart ได้เข้าใจจริงและเอาไปใช้ได้</p>
+          </div>
+        </div>
+        <!-- Class 10 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 10</span>
+            <span style="flex:1;">Semester 1 Integration &amp; Assessment</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="Review and consolidate everything from Semester 1. Practice real case analysis and Q&amp;A with Sean, then prepare for Semester 2: Advanced Career Design.">รวบรวมและทบทวนทุกอย่างที่เรียนมาใน Semester 1 ฝึกวิเคราะห์ case จริง ถาม-ตอบ และเตรียมพร้อมก่อนเข้าสู่ Semester 2: Advanced Career Design</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:20px; display:flex; justify-content:flex-end;">
+        <a href="https://drive.google.com/file/d/1CzMjba4wiK88cjPjsSP4Xb24t6XFf79L/view" target="_blank" class="btn btn-outline btn-sm">
+          <span data-en="View Semester 1 Learning Outcomes →">ดู Semester 1 Learning Outcomes →</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Semester 2 -->
+    <div class="sem-panel" id="sem2">
+      <div style="border: 1px solid var(--border-bold); border-radius:var(--radius-lg); overflow:hidden;">
+        <!-- Class 11 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 11</span>
+            <span style="flex:1;">Introduction to OC16</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="Introduction to OC16, the structure of 16 roles that naturally exist in every organisation. What OC16 is, how it works, and why it's a key tool for managing teams and organisations.">ทำความรู้จัก OC16 โครงสร้าง 16 บทบาทที่มีอยู่ในทุกองค์กรตามธรรมชาติ เข้าใจว่า OC16 คืออะไร ทำงานอย่างไร และทำไมถึงเป็นเครื่องมือสำคัญสำหรับการบริหารทีมและองค์กร</p>
+          </div>
+        </div>
+        <!-- Class 12 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 12</span>
+            <span style="flex:1;" data-en="OC16, 16 Roles in the Organisation">OC16 · 16 บทบาทในองค์กร</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="In-depth analysis of all 16 OC16 roles: the function of each role in an organisation, how roles work together, and how to use OC16 to design effective team structures.">วิเคราะห์ 16 บทบาทใน OC16 อย่างละเอียด แต่ละบทบาทมีหน้าที่อะไรในองค์กร ทำงานกับบทบาทอื่นๆ อย่างไร และวิธีใช้ OC16 เพื่อ design โครงสร้างทีมที่เหมาะสม</p>
+          </div>
+        </div>
+        <!-- Class 13 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 13</span>
+            <span style="flex:1;" data-en="Penta, Small Group Dynamics (3–5 people)">Penta, Small Group Dynamics (3–5 คน)</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="Study Penta, the energy dynamics of small groups of 3–5 people. How groups this size work, why some small teams perform exceptionally and others don't, and how to assess whether your team's Penta is supportive or problematic.">ศึกษา Penta พลังงานของกลุ่มเล็ก 3–5 คน ว่ากลุ่มขนาดนี้ทำงานอย่างไร ทำไมบางทีมเล็กถึง perform ดีมาก บางทีมไม่ และวิธีวิเคราะห์ว่า Penta ของทีมคุณ supportive หรือ problematic</p>
+          </div>
+        </div>
+        <!-- Class 14 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 14</span>
+            <span style="flex:1;" data-en="WA, Large Group Dynamics (6+ people)">WA, Large Group Dynamics (6+ คน)</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="Analyze WA (Wider Aspects) in large organisation contexts. How large-group energy differs from Penta, and how to read group dynamics in organisations with more than 5 members.">วิเคราะห์ WA (Wider Aspects) ในบริบทองค์กรขนาดใหญ่ เข้าใจว่าพลังงานของกลุ่มใหญ่แตกต่างจาก Penta อย่างไร และวิธีอ่าน group dynamics ในองค์กรที่มีสมาชิกมากกว่า 5 คน</p>
+          </div>
+        </div>
+        <!-- Class 15 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 15</span>
+            <span style="flex:1;">Career &amp; Business Cycles</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="Learn about life and business Cycles and how they affect career timing: when to push, when to rest, when to begin again, and how to assess which Cycle phase you're currently in.">เรียนรู้ Cycle ของชีวิตและธุรกิจที่ส่งผลต่อ timing ของอาชีพ ช่วงไหนควรเร่ง ช่วงไหนควรพัก ช่วงไหนเหมาะกับการเริ่มต้นใหม่ และวิธีวิเคราะห์ว่าตอนนี้คุณอยู่ในช่วง Cycle ไหน</p>
+          </div>
+        </div>
+        <!-- Class 16 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 16</span>
+            <span style="flex:1;">Partnership Analysis</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="Study Partnership dynamics in business and work: how the combined energy of two people shapes collaboration, and what to look for in a compatible business partner.">ศึกษาการทำงานร่วมกันเป็นคู่ (Partnership) ในธุรกิจและงาน วิเคราะห์ว่าคนสองคนเมื่ออยู่ด้วยกันแล้ว พลังงานรวมของทั้งคู่เป็นอย่างไร และคู่หุ้นส่วนธุรกิจที่เข้ากันดีควรดูที่อะไร</p>
+          </div>
+        </div>
+        <!-- Class 17 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 17</span>
+            <span style="flex:1;">Team Dynamics Analysis</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="Integrate BG5 tools to analyze a full team, combining Career Type, OC16, Penta, and Partnership to identify strengths, gaps, and how to design a team for maximum output.">วิเคราะห์ทีมผ่าน BG5 อย่างบูรณาการ รวม Career Type, OC16, Penta และ Partnership มาวิเคราะห์ว่าทีมของคุณมีจุดแข็งอะไร จุดอ่อนอะไร และควร design ทีมอย่างไรให้ได้ผลสูงสุด</p>
+          </div>
+        </div>
+        <!-- Class 18 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 18</span>
+            <span style="flex:1;">Business Structure Analysis</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="Analyze business structure through a Career Design lens: what org structure fits different team sizes, which Career Types suit which roles, and how to design an organisation aligned with the real energy of your team.">วิเคราะห์โครงสร้างธุรกิจผ่านเลนส์ Career Design บริษัทที่มีคนกี่คนควรมีโครงสร้างแบบไหน บทบาทแต่ละตำแหน่งควรมีคนที่มี Career Type อะไร และวิธีออกแบบองค์กรให้สอดคล้องกับพลังงานจริงของทีม</p>
+          </div>
+        </div>
+        <!-- Class 19 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 19</span>
+            <span style="flex:1;">Career Analysis, Consulting Basics</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="Learn how to read a Career Design Chart for others. Foundations of consulting as a BG5 practitioner: how to structure a session, communicate insights clearly, and the ethics of career analysis consulting.">เรียนรู้วิธีอ่าน Career Design Chart ให้คนอื่น พื้นฐานการให้คำปรึกษาในฐานะ BG5 practitioner วิธีโครงสร้าง session, วิธีสื่อสาร insight, และ ethics ตอนให้คำปรึกษา</p>
+          </div>
+        </div>
+        <!-- Class 20 -->
+        <div class="class-item faq-item">
+          <button class="class-question faq-question">
+            <span class="class-num">CLASS 20</span>
+            <span style="flex:1;">Semester 2 Integration &amp; Certification Pathway</span>
+            <span class="class-icon faq-icon">+</span>
+          </button>
+          <div class="class-answer faq-answer">
+            <p data-en="Review and assess understanding across Semester 1 + 2. Full case analysis practice, Q&amp;A, and a briefing on the BG5 Certification pathway with BG5 Business Institute for those who want to continue.">ทบทวนและประเมินความเข้าใจรวม Semester 1 + 2 ฝึกวิเคราะห์ case จริงแบบ comprehensive และรับ briefing เกี่ยวกับ BG5 Certification pathway กับ BG5 Business Institute สำหรับคนที่ต้องการเดินหน้าต่อ</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:20px; display:flex; justify-content:flex-end;">
+        <a href="https://drive.google.com/file/d/1rAydFVi7q8XlfMiPt9yuwhh8TzqGvhgr/view" target="_blank" class="btn btn-outline btn-sm">
+          <span data-en="View Semester 2 Learning Outcomes →">ดู Semester 2 Learning Outcomes →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHO FOR / NOT FOR ─────────────────────────── -->
+<section style="padding:0 0 80px;">
+  <div class="container">
+    <div class="section-header center" style="margin-bottom:48px;">
+      <p class="label text-accent">Fit Check</p>
+      <h2 class="h2" style="margin-top:12px;">Who This Course Is For</h2>
+    </div>
+    <div class="grid-2" style="align-items:start; gap:24px;">
+      <div class="card">
+        <p class="label text-accent" style="margin-bottom:16px;">This is for you ✓</p>
+        <ul class="learn-list">
+          <li data-en="Already completed Living Your Design and want to deepen into work and business">ผ่าน Living Your Design มาแล้ว และอยากต่อยอดในเรื่องงานและธุรกิจ</li>
+          <li data-en="Entrepreneurs who want to understand themselves and their team better">ผู้ประกอบการที่อยากเข้าใจตัวเองและทีมให้มากขึ้น</li>
+          <li data-en="HR or Team Leads who want a framework for building and choosing teams">HR หรือ Team Lead ที่อยากได้ framework ไว้ดูทีมและคัดสรรคน</li>
+          <li data-en="Coaches or Consultants who want to add Career Design as a tool">Coaches หรือ Consultants ที่อยากเพิ่ม Career Design เป็น tool ใหม่</li>
+          <li data-en="People who work hard but don't feel like they're growing, and want to see why">คนที่รู้สึกว่าทำงานหนักแต่ไม่โต อยากเห็นว่าปัญหาอยู่ตรงไหน</li>
+          <li data-en="People planning to pursue the BG5 Certification pathway">คนที่วางแผนจะเดิน BG5 Certification pathway</li>
+          <li data-en="People who want to consult professionally using BG5 Career Design">คนที่ต้องการให้คำปรึกษาเป็นอาชีพโดยใช้ BG5 Career Design</li>
+        </ul>
+      </div>
+      <div class="card">
+        <p style="font-size:0.6875rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#4361EE; margin-bottom:16px; display:inline-block; border: 1px solid #4361EE; border-radius:var(--radius-sm); padding:3px 10px;" data-en="Not quite right for you ×">อาจยังไม่เหมาะ</p>
+        <ul style="display:flex; flex-direction:column; gap:12px; list-style:none;">
+          <li style="display:flex; gap:12px; align-items:flex-start; font-size:0.9375rem; color:var(--ink-mid); line-height:1.65;" data-en="&lt;span style='color:#4361EE; font-weight:800; flex-shrink:0; margin-top:1px;'&gt;×&lt;/span&gt; Haven't completed Living Your Design yet, BG5 builds on Human Design foundations.">
+            <span style="color:#4361EE; font-weight:800; flex-shrink:0; margin-top:1px;">×</span>
+            ยังไม่ได้ผ่าน Living Your Design, BG5 ใช้ foundation ของ Human Design เป็นฐาน ต้องเข้าใจพื้นฐานก่อน
+          </li>
+          <li style="display:flex; gap:12px; align-items:flex-start; font-size:0.9375rem; color:var(--ink-mid); line-height:1.65;" data-en="&lt;span style='color:#4361EE; font-weight:800; flex-shrink:0; margin-top:1px;'&gt;×&lt;/span&gt; Looking for general self-help, BG5 is a structured framework that takes time to study and practice.">
+            <span style="color:#4361EE; font-weight:800; flex-shrink:0; margin-top:1px;">×</span>
+            ต้องการความรู้แบบ self-help ทั่วไป BG5 เป็น framework ที่ต้องใช้เวลาศึกษาและฝึก
+          </li>
+          <li style="display:flex; gap:12px; align-items:flex-start; font-size:0.9375rem; color:var(--ink-mid); line-height:1.65;" data-en="&lt;span style='color:#4361EE; font-weight:800; flex-shrink:0; margin-top:1px;'&gt;×&lt;/span&gt; Want to learn passively. This course requires participation in live classes, not just watching recordings.">
+            <span style="color:#4361EE; font-weight:800; flex-shrink:0; margin-top:1px;">×</span>
+            อยากเรียนแบบ passive คอร์สนี้ต้องการการมีส่วนร่วมในชั้นเรียน ไม่ใช่แค่ดู recording
+          </li>
+          <li style="display:flex; gap:12px; align-items:flex-start; font-size:0.9375rem; color:var(--ink-mid); line-height:1.65;" data-en="&lt;span style='color:#4361EE; font-weight:800; flex-shrink:0; margin-top:1px;'&gt;×&lt;/span&gt; Looking for a quick fix, BG5 is a system that takes time to observe and apply to real life.">
+            <span style="color:#4361EE; font-weight:800; flex-shrink:0; margin-top:1px;">×</span>
+            ต้องการ quick fix, BG5 เป็นระบบที่ต้องใช้เวลา observe และ apply กับชีวิตจริง
+          </li>
+        </ul>
+        <div style="margin-top:24px; padding-top:20px; border-top:1.5px solid var(--border);">
+          <div class="notice-box">
+            <div class="notice-box-icon">
+              <img loading="lazy" src="assets/emoji prerequisite.png" alt="" width="32" height="32" style="object-fit:contain;">
+            </div>
+            <p class="notice-box-text" data-en="You need to complete &lt;strong&gt;Living Your Design&lt;/strong&gt; before enrolling in BG5 Foundation.">
+              ต้องผ่าน <strong>Living Your Design</strong> มาก่อนถึงจะสมัคร BG5 Foundation ได้
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LEARNING EXPERIENCE ────────────────────────── -->
+<section style="padding:0 0 80px;">
+  <div class="container">
+    <div class="grid-2" style="gap:48px; align-items:center;">
+      <div>
+        <p class="label text-accent" style="margin-bottom:16px;">How It Works</p>
+        <h2 class="h2" style="margin-bottom:24px;">How It Works</h2>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <div style="display:flex; gap:20px; align-items:flex-start;">
+            <div style="width:40px; height:40px; background:var(--ink); border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div>
+              <h4 class="h4" style="margin-bottom:6px;">Live Online</h4>
+              <p class="body-sm text-mid" data-en="Live sessions with Sean, ask questions in real time, not just watch a video.">เรียนสดออนไลน์กับ Sean สามารถถาม-ตอบได้ระหว่างเรียน ไม่ใช่แค่ดู video</p>
+            </div>
+          </div>
+          <div style="display:flex; gap:20px; align-items:flex-start;">
+            <div style="width:40px; height:40px; background:var(--ink); border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <h4 class="h4" style="margin-bottom:6px;">Small Group Format</h4>
+              <p class="body-sm text-mid" data-en="Small group format for more attention from the instructor and learning from each other's cases.">รูปแบบ small group เพื่อให้ได้ความสนใจจาก instructor และเรียนรู้จาก case ของกันและกัน</p>
+            </div>
+          </div>
+          <div style="display:flex; gap:20px; align-items:flex-start;">
+            <div style="width:40px; height:40px; background:var(--ink); border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            </div>
+            <div>
+              <h4 class="h4" style="margin-bottom:6px;">Recordings Available</h4>
+              <p class="body-sm text-mid" data-en="Every class has a recording available, for review or if you can't make a live session.">ทุก class มี recording ให้ดูย้อนหลัง สำหรับทบทวนหรือในกรณีที่ไม่สามารถเข้า live ได้</p>
+            </div>
+          </div>
+          <div style="display:flex; gap:20px; align-items:flex-start;">
+            <div style="width:40px; height:40px; background:var(--ink); border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            </div>
+            <div>
+              <h4 class="h4" style="margin-bottom:6px;">Taught in English</h4>
+              <p class="body-sm text-mid" data-en="Sean teaches in English. So you get a deeper understanding of concepts directly from the source. A Thai Guidebook is provided before each session.">Sean สอนเป็นภาษาอังกฤษ ทำให้เข้าใจ concept ได้ลึกกว่า มี Guidebook ภาษาไทยให้ก่อนทุก session</p>
+            </div>
+          </div>
+          <div style="display:flex; gap:20px; align-items:flex-start;">
+            <div style="width:40px; height:40px; background:var(--ink); border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h4 class="h4" style="margin-bottom:6px;">IACET Accredited CEUs</h4>
+              <p class="body-sm text-mid" data-en="Earn 3.1 CEUs (Sem 1) + 3.3 CEUs (Sem 2) from BG5 Business Institute, an IACET Accredited Provider.">ได้รับ 3.1 CEUs (Sem 1) + 3.3 CEUs (Sem 2) จาก BG5 Business Institute ซึ่งเป็น IACET Accredited Provider</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="gap:0; overflow:hidden; padding:0;">
+          <div style="background:var(--brand-dark); padding:28px 32px;">
+            <p style="color:rgba(255,255,255,0.82); font-size:0.6875rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px;">Course Details</p>
+            <h3 class="h3" style="color:var(--cream);">Course Details</h3>
+          </div>
+          <table style="width:100%; border-collapse:collapse;">
+            <tr style="border-bottom:1.5px solid var(--border);">
+              <td style="padding:14px 24px; font-size:0.8125rem; font-weight:700; color:var(--ink-mid); width:40%;">Format</td>
+              <td style="padding:14px 24px; font-size:0.9rem; color:var(--ink);" data-en="Online · Live + Recording">Online · Live + Recording</td>
+            </tr>
+            <tr style="border-bottom:1.5px solid var(--border);">
+              <td style="padding:14px 24px; font-size:0.8125rem; font-weight:700; color:var(--ink-mid);">Classes</td>
+              <td style="padding:14px 24px; font-size:0.9rem; color:var(--ink);">20 Classes (10 per Semester)</td>
+            </tr>
+            <tr style="border-bottom:1.5px solid var(--border);">
+              <td style="padding:14px 24px; font-size:0.8125rem; font-weight:700; color:var(--ink-mid);">CEUs</td>
+              <td style="padding:14px 24px; font-size:0.9rem; color:var(--ink);">3.1 CEUs (Sem 1) + 3.3 CEUs (Sem 2)</td>
+            </tr>
+            <tr style="border-bottom:1.5px solid var(--border);">
+              <td style="padding:14px 24px; font-size:0.8125rem; font-weight:700; color:var(--ink-mid);">Language</td>
+              <td style="padding:14px 24px; font-size:0.9rem; color:var(--ink);" data-en="English (Thai Guidebook provided)">ภาษาอังกฤษ (มี Guidebook ภาษาไทย)</td>
+            </tr>
+            <tr style="border-bottom:1.5px solid var(--border);">
+              <td style="padding:14px 24px; font-size:0.8125rem; font-weight:700; color:var(--ink-mid);">Prerequisite</td>
+              <td style="padding:14px 24px; font-size:0.9rem; color:var(--ink);" data-en="Living Your Design (LVD)">Living Your Design (LVD)</td>
+            </tr>
+            <tr style="border-bottom:1.5px solid var(--border);">
+              <td style="padding:14px 24px; font-size:0.8125rem; font-weight:700; color:var(--ink-mid);">Instructor</td>
+              <td style="padding:14px 24px; font-size:0.9rem; color:var(--ink);" data-en="Sean, BG5 Licensed Instructor">Sean, BG5 Licensed Instructor</td>
+            </tr>
+            <tr>
+              <td style="padding:14px 24px; font-size:0.8125rem; font-weight:700; color:var(--ink-mid);">ราคา</td>
+              <td style="padding:14px 24px; font-size:0.9rem; color:var(--ink); font-weight:700;">$1,250 USD / 2 semesters</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ROADMAP ─────────────────────────────────── -->
+<section id="roadmap" style="padding:0 0 80px;">
+  <div class="container">
+    <div class="section-header center" style="margin-bottom:40px;">
+      <p class="label text-accent">The Path</p>
+      <h2 class="h2" style="margin-top:12px;">BG5 Roadmap</h2>
+      <p class="body-md text-mid" style="margin-top:14px; max-width:500px; margin-left:auto; margin-right:auto;" data-en="From Living Your Design to Certification, each step has its own meaning and learning.">จาก Living Your Design ไปถึง Certification<br>แต่ละขั้นจะพาคุณเรียนคนละเรื่อง
+      </p>
+    </div>
+    <div style="border-radius:var(--radius-xl); overflow:hidden; box-shadow:var(--shadow-lg); border: 1px solid var(--border-bold);">
+      <img loading="lazy" src="assets/bg5-journey-roadmap.png" alt="BG5 Roadmap" style="width:100%; display:block;">
+    </div>
+  </div>
+</section>
+
+<!-- ─── COMPARISON TABLE ─────────────────────────── -->
+<section style="padding:0 0 80px;">
+  <div class="container">
+    <div class="section-header center" style="margin-bottom:40px;">
+      <p class="label text-accent">Course Comparison</p>
+      <h2 class="h2" style="margin-top:12px;">Compare: LVD → BG5 → Certification</h2>
+      <p class="body-md text-mid" style="margin-top:14px; max-width:520px; margin-left:auto; margin-right:auto;" data-en="Each step fits a different goal.">แต่ละ step เหมาะกับเป้าหมายที่ต่างกัน
+      </p>
+    </div>
+    <div style="overflow-x:auto; border-radius:var(--radius-lg); border: 1px solid var(--border-bold); box-shadow: var(--shadow-md);">
+      <table class="compare-table" style="min-width:640px;">
+        <thead>
+          <tr>
+            <th style="width:28%;" data-en="Feature">หัวข้อ</th>
+            <th>Living Your Design</th>
+            <th class="hl">BG5 Foundation</th>
+            <th>BG5 Certification</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-en="Purpose">จุดประสงค์</td>
+            <td data-en="Understand yourself in daily life">เข้าใจตัวเองในชีวิตประจำวัน</td>
+            <td class="hl" data-en="Understand yourself and your team in work &amp; business">เข้าใจตัวเองและทีมในบริบทงานธุรกิจ</td>
+            <td data-en="Become a professional BG5 Consultant">เป็น BG5 Consultant มืออาชีพ</td>
+          </tr>
+          <tr>
+            <td>Format</td>
+            <td>4 Days Workshop</td>
+            <td class="hl">2 Semesters · 20 Classes</td>
+            <td>3 Semesters · 30 Classes</td>
+          </tr>
+          <tr>
+            <td>IACET CEUs</td>
+            <td class="cross">✕</td>
+            <td class="hl" data-en="&lt;span class='check'&gt;✓&lt;/span&gt; Includes IACET CEUs"><span class="check">✓</span> รวม IACET CEUs</td>
+            <td data-en="&lt;span class='check'&gt;✓&lt;/span&gt; Includes IACET CEUs"><span class="check">✓</span> รวม IACET CEUs</td>
+          </tr>
+          <tr>
+            <td>Prerequisite</td>
+            <td data-en="None">ไม่มี</td>
+            <td class="hl">Living Your Design</td>
+            <td data-en="BG5 Foundation + additional courses">BG5 Foundation + เพิ่มเติม</td>
+          </tr>
+          <tr>
+            <td data-en="Best for">เหมาะสำหรับ</td>
+            <td data-en="Anyone who feels angry, frustrated, emotionally drained, or disappointed with life.">ทุกคนที่โกรธ หงุดหงิด นอยด์ หรือผิดหวังกับชีวิต</td>
+            <td class="hl" data-en="Entrepreneurs, HR, Coaches, professionals">ผู้ประกอบการ, HR, Coach, คนทำงาน</td>
+            <td data-en="Those who want to consult professionally">คนที่ต้องการให้คำปรึกษาเป็นอาชีพ</td>
+          </tr>
+          <tr>
+            <td>Instructor</td>
+            <td>Sean Michael<br><span style="font-size:0.75rem; font-weight:400; color:var(--ink-mid);">BG5 Business Institute Certified Instructor</span></td>
+            <td class="hl">Sean Michael<br><span style="font-size:0.75rem; font-weight:400; color:var(--ink-mid);">BG5 Business Institute Certified Instructor</span></td>
+            <td data-en="BG5 Business Institute&lt;br&gt;&lt;span style='font-size:0.75rem; font-weight:400; color:var(--ink-mid);'&gt;BG5BI Certified Professionals&lt;/span&gt;">BG5 Business Institute<br><span style="font-size:0.75rem; font-weight:400; color:var(--ink-mid);">BG5BI Certified Professionals</span></td>
+          </tr>
+          <tr>
+            <td data-en="Price">ราคา</td>
+            <td>$500 USD</td>
+            <td class="hl" style="font-weight:700; color:var(--ink);" data-en="$1,250 USD&lt;br&gt;&lt;span style='font-size:0.75rem; font-weight:400; color:var(--ink-mid);'&gt;Includes 2 semesters&lt;/span&gt;">$1,250 USD<br><span style="font-size:0.75rem; font-weight:400; color:var(--ink-mid);">รวม 2 Semesters</span></td>
+            <td style="font-weight:700; color:var(--ink);" data-en="$6,224 USD&lt;br&gt;&lt;span style='font-size:0.75rem; font-weight:400; color:var(--ink-mid);'&gt;Includes 3 semesters&lt;/span&gt;">$6,224 USD<br><span style="font-size:0.75rem; font-weight:400; color:var(--ink-mid);">รวม 3 Semesters</span></td>
+          </tr>
+          <tr>
+            <td data-en="Details">ข้อมูลเพิ่มเติม</td>
+            <td class="cross">✕</td>
+            <td class="hl cross">,</td>
+            <td><a href="https://bg5businessinstitute.com/packages/175/bg5-certification-package-september-23-2026-with-banu-cetin" target="_blank" style="color:var(--accent); text-decoration:underline; font-size:0.875rem;" data-en="Details from BG5 Business Institute">ดูรายละเอียดเพิ่มเติมจาก BG5 Business Institute</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ─── IACET CEU EXPLAINER ───────────────────────── -->
+<section style="padding:0 0 80px;">
+  <div class="container">
+    <div style="background:var(--white); border:1px solid var(--border-bold); border-radius:24px; box-shadow:var(--shadow-md); padding:40px 48px; display:flex; gap:40px; align-items:center;" class="iacet-card">
+      <div style="flex-shrink:0; width:160px;">
+        <img loading="lazy" src="assets/iacet-accredited-1.png" alt="IACET Accredited Provider" style="width:100%; height:auto; display:block;">
+      </div>
+      <div style="flex:1; min-width:0;">
+        <p class="label text-accent" style="margin-bottom:10px;">International Recognition</p>
+        <h3 class="h3" style="margin-bottom:16px;">IACET CEUs</h3>
+        <p class="body-md text-mid" style="margin-bottom:12px;" data-en="This course awards Continuing Education Units (CEUs) under the internationally recognized IACET standard, reflecting the quality and educational standards of an accredited continuing education program.">
+          คอร์สนี้ได้รับหน่วยกิตการศึกษาต่อเนื่องตามมาตรฐานสากลของ IACET ซึ่งสะท้อนคุณภาพและมาตรฐานของคอร์สที่ได้รับการรับรองในระดับนานาชาติ
+        </p>
+        <p class="body-md text-mid" data-en="IACET CEUs are awarded by IACET Accredited Providers and are widely recognized as a benchmark for high-quality continuing education and professional development.">
+          IACET CEUs เป็นมาตรฐานที่ใช้รับรองคอร์สด้านการศึกษาต่อเนื่อง (Continuing Education) โดยองค์กร IACET จากประเทศสหรัฐอเมริกา และได้รับการยอมรับจากองค์กรและสถาบันการศึกษาทั่วโลก
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SEAN + CERTS ──────────────────────────────── -->
+<section style="padding:0 0 80px;">
+  <div class="container">
+    <div class="grid-2" style="align-items:start; gap:24px;">
+      <div class="card">
+        <div class="avatar-card" style="margin-bottom:24px;">
+          <img loading="lazy" src="assets/sean-avatar.png" alt="Sean" class="avatar-img">
+          <div>
+            <h3 class="h4">Sean</h3>
+            <p class="body-sm text-light">BG5 Foundation Licensed Instructor</p>
+          </div>
+        </div>
+        <div class="qual-group">
+          <span class="qual-label">BG5 Qualifications</span>
+          <ul class="qual-list">
+            <li>BG5 Foundation, Licensed Teaching</li>
+            <li>BG5 Career &amp; Business Consultant</li>
+            <li>BG5 Career &amp; Business Cycles Consultant</li>
+            <li>BG5 Profit Potential Assessment</li>
+          </ul>
+        </div>
+        <div class="qual-group">
+          <span class="qual-label">Human Design</span>
+          <ul class="qual-list">
+            <li>Human Design Individual Rave Analysis</li>
+            <li>Human Design Dream Rave Analysis</li>
+            <li>Living Your Design Guide, Licensed Teaching</li>
+          </ul>
+        </div>
+        <div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="https://www.innerblueprint.net/contact" target="_blank" class="btn btn-outline btn-sm">
+            Book a Session with Sean →
+          </a>
+          <a href="https://www.ihdschool.com/professionals" target="_blank" class="btn btn-outline btn-sm" style="font-size:0.8rem;">
+            Verify IHDS License →
+          </a>
+          <a href="https://bg5businessinstitute.com/professionals" target="_blank" class="btn btn-outline btn-sm" style="font-size:0.8rem;">
+            Verify BG5BI License →
+          </a>
+        </div>
+      </div>
+
+      <div class="card-cream" style="display:flex; flex-direction:column; gap:20px;">
+        <div>
+          <p class="label text-accent" style="margin-bottom:12px;">About Certification</p>
+          <h3 class="h3">Your Path to BG5 Certification</h3>
+        </div>
+        <p class="body-md text-mid" data-en="BG5 Foundation is the required prerequisite for applying to certification with &lt;strong&gt;BG5 Business Institute&lt;/strong&gt;.">
+          BG5 Foundation เป็น prerequisite สำหรับการสมัคร certification จาก <strong>BG5 Business Institute</strong>
+        </p>
+        <p class="body-md text-mid" data-en="Studying with Sean as a BG5BI-licensed instructor is one pathway that can be built upon with the institute.">
+          การเรียนกับ Sean ในฐานะ Licensed Instructor ที่ได้รับการรับรองจาก BG5BI เป็นหนึ่งในทางที่สามารถนำไปต่อยอดกับ institute ได้
+        </p>
+        <div class="notice-box">
+          <div class="notice-box-icon">
+            <img loading="lazy" src="assets/emoji certificate.png" alt="" width="32" height="32" style="object-fit:contain;">
+          </div>
+          <p class="notice-box-text" data-en="Certification from BG5 Business Institute is a separate programme from this course. Learn more at &lt;a href=&quot;https://bg5businessinstitute.com&quot; target=&quot;_blank&quot; style=&quot;color:var(--accent); text-decoration:underline;&quot;&gt;BG5 Business Institute →&lt;/a&gt;">
+            Certification จาก BG5 Business Institute เป็นคนละโปรแกรมกับคอร์สนี้
+            ดูข้อมูลเพิ่มเติมได้ที่
+            <a href="https://bg5businessinstitute.com" target="_blank" style="color:var(--accent); text-decoration:underline;">BG5 Business Institute →</a>
+          </p>
+        </div>
+        <a href="https://bg5businessinstitute.com" target="_blank" class="btn btn-outline btn-sm" style="align-self:flex-start;">
+          View BG5 Business Institute →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CERTIFICATE CAROUSEL ──────────────────────── -->
+<section style="padding:0 0 80px;">
+  <div class="container">
+    <div class="section-header">
+      <p class="label text-accent">Certifications</p>
+      <h2 class="h2" style="margin-top:10px;">Sean's Certifications</h2>
+    </div>
+    <div class="carousel-wrapper">
+      <div class="carousel-overflow">
+        <div class="carousel-track">
+          <div class="cert-card">
+            <img loading="lazy" src="assets/certificates/bg5-foundation-teaching-licensed.jpg" alt="BG5 Foundation Teaching Licensed">
+            <p class="cert-card-label">BG5 Foundation, Licensed Teaching</p>
+          </div>
+          <div class="cert-card">
+            <img loading="lazy" src="assets/certificates/bg5-career-business-consultant.jpg" alt="BG5 Career & Business Consultant">
+            <p class="cert-card-label">BG5 Career &amp; Business Consultant</p>
+          </div>
+          <div class="cert-card">
+            <img loading="lazy" src="assets/certificates/bg5-career-business-cycles-consultant.jpg" alt="BG5 Career & Business Cycles Consultant">
+            <p class="cert-card-label">BG5 Career &amp; Business Cycles Consultant</p>
+          </div>
+          <div class="cert-card">
+            <img loading="lazy" src="assets/certificates/bg5-profit-potential.jpg" alt="BG5 Profit Potential">
+            <p class="cert-card-label">BG5 Profit Potential Assessment</p>
+          </div>
+          <div class="cert-card">
+            <img loading="lazy" src="assets/certificates/human-design-individual-rave-analysis.jpg" alt="Human Design Individual Rave Analysis">
+            <p class="cert-card-label">IHDS Individual Rave Analysis</p>
+          </div>
+          <div class="cert-card">
+            <img loading="lazy" src="assets/certificates/living-your-design-guide-licensed-teaching.jpg" alt="Living Your Design Guide Licensed Teaching">
+            <p class="cert-card-label">Living Your Design Guide, Licensed Teaching</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-btns">
+        <button class="carousel-btn carousel-prev" aria-label="Previous">←</button>
+        <button class="carousel-btn carousel-next" aria-label="Next">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ──────────────────────────────────────── -->
+<section style="padding:0 0 80px;">
+  <div class="container">
+    <div style="max-width:760px; margin:0 auto;">
+      <div class="section-header center" style="margin-bottom:40px;">
+        <p class="label text-accent">FAQ</p>
+        <h2 class="h2" style="margin-top:12px;">FAQ</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-en="Do I need to complete Living Your Design first?">ต้องเรียน Living Your Design ก่อนไหม?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <span data-en="Yes, BG5 Foundation uses Human Design vocabulary and framework as its base. You need to understand Type, Strategy, Authority, Centers, and Profile first. If you haven't yet, <a href="living-your-design.html" style="color:var(--accent); text-decoration:underline;">start with LVD first →</a>">ใช่ BG5 Foundation ใช้ vocabulary และ framework ของ Human Design เป็นพื้นฐาน คุณต้องเข้าใจ Type, Strategy, Authority, Centers และ Profile ก่อน ถึงจะเรียน BG5 ได้เต็มที่ หากยังไม่ได้เรียน <a href="living-your-design.html" style="color:var(--accent); text-decoration:underline;">เริ่มที่ LVD ก่อน →</a></span>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-en="What is an IACET CEU and how can I use it?">IACET CEU คืออะไร และใช้ประโยชน์อะไรได้?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <span data-en="IACET CEU (Continuing Education Unit) is an internationally recognised measure of continuing education. 1 CEU = 10 hours of quality learning. BG5 Business Institute has been IACET accredited since 2022, CEUs earned from this course meet international standards and can be used as part of a professional development portfolio.">IACET CEU (Continuing Education Unit) เป็นหน่วยวัดการศึกษาต่อเนื่องที่ได้รับการยอมรับในระดับสากล 1 CEU = 10 ชั่วโมงการเรียนรู้ที่มีคุณภาพ BG5 Business Institute ได้รับการรับรองจาก IACET ตั้งแต่ปี 2022 ดังนั้น CEU ที่ได้จากคอร์สนี้ถือว่าผ่านมาตรฐานสากล สามารถนำไปใช้เป็น portfolio การพัฒนาวิชาชีพได้</span>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-en="Does $1,250 USD include both Semester 1 and 2?">ราคา $1,250 USD รวม Semester 1 และ 2 เลยไหม?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <span data-en="Yes, $1,250 USD covers both Semesters combined (20 classes total), including recordings for every class and IACET CEUs from BG5 Business Institute.">ใช่ $1,250 USD คือราคาสำหรับ 2 Semesters รวมกัน (20 Classes ทั้งหมด) รวม recording ทุก class และ IACET CEU จาก BG5 Business Institute</span>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-en="Is there an Early Bird price?">มี Early Bird ราคาพิเศษไหม?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <span data-en="Yes, Early Bird pricing is available for the first 5 spots in each batch. Inquire directly via <a href="contact.html" style="color:var(--accent); text-decoration:underline;">the Contact page →</a>">มี จะมีราคา Early Bird สำหรับ 5 คนแรกของแต่ละ batch ติดต่อสอบถามราคา Early Bird ได้โดยตรงผ่าน <a href="contact.html" style="color:var(--accent); text-decoration:underline;">หน้า Contact →</a></span>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-en="If I can't attend live, are recordings available?">ถ้าเข้า live ไม่ได้ มี recording ให้ดูย้อนหลังไหม?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <span data-en="Yes, all classes have recordings. But we recommend attending live so you can ask questions and interact with Sean directly, that's a key part of the learning.">มี ทุก class จะมี recording ให้ดูย้อนหลัง แต่เราแนะนำให้เข้า live เพราะสามารถถาม-ตอบและ interact กับ Sean ได้โดยตรง ซึ่งเป็นส่วนสำคัญของการเรียน</span>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-en="Can I pause and take Semester 2 later?">สามารถพัก แล้วค่อยเรียน Semester 2 ทีหลังได้ไหม?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <span data-en="It depends on each batch schedule. Reach out directly to inquire, there may be flexibility in some cases.">ขึ้นอยู่กับ schedule ของแต่ละ batch ติดต่อสอบถามรายละเอียดได้โดยตรง บางกรณีปรับตารางได้ตามความเหมาะสม</span>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-en="Can I apply for BG5 Certification right after completing this course?">หลังเรียนจบสามารถสอบ BG5 Certification ได้เลยไหม?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <span data-en="BG5 Foundation is the prerequisite for the Certification pathway with BG5 Business Institute, but Certification is a separate programme that you apply for directly with BG5BI. Learn more at <a href=&quot;https://bg5businessinstitute.com&quot; target=&quot;_blank&quot; style=&quot;color:var(--accent); text-decoration:underline;&quot;>bg5businessinstitute.com →</a>">BG5 Foundation เป็น prerequisite สำหรับ Certification pathway กับ BG5 Business Institute แต่ Certification เป็นโปรแกรมแยกต่างหากที่ต้องสมัครกับ BG5BI โดยตรง ดูข้อมูลเพิ่มเติมได้ที่ <a href="https://bg5businessinstitute.com" target="_blank" style="color:var(--accent); text-decoration:underline;">bg5businessinstitute.com →</a></span>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-en="How is this different from self-studying BG5 from English materials?">คอร์สนี้แตกต่างจากการเรียน BG5 ด้วยตัวเองจาก materials ภาษาอังกฤษอย่างไร?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <span data-en="Sean teaches in English and brings experience analyzing real charts in a Thai-context setting. You get examples that relate to real life, plus the live format means you can ask questions directly and learn from other students in the group.">Sean สอนเป็นภาษาอังกฤษ มีประสบการณ์วิเคราะห์ chart จริงในบริบทของคนไทย ทำให้ได้ context และตัวอย่างที่ relate กับชีวิตจริงมากกว่า นอกจากนี้รูปแบบ live ยังทำให้ถามได้ตรงๆ และได้ feedback จาก instructor และคนอื่นในคลาส</span>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-en="I'm a business owner, not HR or a Coach, is this course right for me?">ฉันเป็นเจ้าของธุรกิจ ไม่ได้เป็น HR หรือ Coach คอร์สนี้เหมาะไหม?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <span data-en="Absolutely, business owners benefit from BG5 in understanding how they work best, building teams, choosing partners, and designing a business structure that fits their energy.">เหมาะมาก ผู้ประกอบการได้ประโยชน์จาก BG5 ทั้งในแง่ของการเข้าใจตัวเองเรื่องงาน การสร้างทีม การเลือกหุ้นส่วน และการเข้าใจโครงสร้างธุรกิจที่เหมาะกับตัวเอง</span>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-en="Can I ask questions before enrolling?">ติดต่อสอบถามก่อน enroll ได้ไหม?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <span data-en="Of course, reach out and ask. Go to <a href="contact.html" style="color:var(--accent); text-decoration:underline;">the Contact page →</a> or book a session with Sean directly at <a href="https://www.innerblueprint.net/contact" target="_blank" style="color:var(--accent); text-decoration:underline;">innerblueprint.net →</a>">ได้เลย ทักมาถามก่อนได้ ไม่มีแรงกดดัน ไปที่ <a href="contact.html" style="color:var(--accent); text-decoration:underline;">หน้า Contact →</a> หรือจอง Session กับ Sean โดยตรงที่ <a href="https://www.innerblueprint.net/contact" target="_blank" style="color:var(--accent); text-decoration:underline;">innerblueprint.net →</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA BAND ────────────────────────────── -->
+<section style="padding:0 0 88px;">
+  <div class="container">
+    <div class="cta-band">
+      <p class="label" style="color:rgba(255,255,255,0.82); border-color:rgba(255,255,255,0.3); margin-bottom:20px;">Ready to begin?</p>
+      <h2 class="h2" style="color:var(--cream);">Study BG5 Foundation with Sean</h2>
+      <p data-en="Taught in English · Thai Guidebook included · Small Group · IACET Accredited CEUs · Recordings available">สอนเป็นภาษาอังกฤษ · มี Guidebook ภาษาไทย · Small Group · IACET Accredited CEUs · มี Recording</p>
+      <div style="display:inline-block; background:rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius:var(--radius-md); padding:16px 32px; margin-bottom:32px;">
+        <p style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.82); margin-bottom:6px;" data-en="Price">ราคา</p>
+        <p style="font-size:2.25rem; font-weight:800; color:var(--cream); line-height:1;">$1,250 <span style="font-size:1rem; font-weight:400; color:rgba(255,255,255,0.82);">USD / 2 semesters</span></p>
+        <p style="font-size:0.8125rem; color:rgba(255,255,255,0.75); margin-top:6px;" data-en="Early Bird available, enquire directly">Early Bird available ติดต่อสอบถามได้โดยตรง</p>
+      </div>
+      <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-cream btn-lg">Inquire &amp; Enroll →</a>
+        <a href="living-your-design.html" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,0.3); color:var(--cream);" data-en="Haven't done LVD yet? Start here first →">ยังไม่ได้เรียน LVD? เริ่มที่นี่ก่อน →</a>
+      </div>
+    </div>
+    <div class="notice-box" style="margin-top:20px; max-width:640px; margin-left:auto; margin-right:auto;">
+      <div class="notice-box-icon">
+        <img loading="lazy" src="assets/emoji prerequisite.png" alt="" width="32" height="32" style="object-fit:contain;">
+      </div>
+      <p class="notice-box-text">
+        <span data-en="You need to complete &lt;strong&gt;Living Your Design (LVD)&lt;/strong&gt; before enrolling in BG5 Foundation. Haven't taken it yet? &lt;a href=&quot;living-your-design.html&quot; style=&quot;color:var(--accent); text-decoration:underline;&quot;&gt;Start with LVD →&lt;/a&gt;">ต้องผ่าน <strong>Living Your Design (LVD)</strong> มาก่อนถึงจะสมัคร BG5 Foundation ได้
+        ถ้ายังไม่ได้เรียน? <a href="living-your-design.html" style="color:var(--accent); text-decoration:underline;">Start with LVD →</a></span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>เข้าใจตัวเอง แล้วตัดสินใจง่ายขึ้น</span><img loading="lazy" src="assets/stickers/star4-butter.svg" alt="" width="20" height="20">
+    <span>The Unpopular Club</span><img loading="lazy" src="assets/stickers/star5-pink.svg" alt="" width="20" height="20">
+    <span>Human Design · BG5 · Bangkok</span><img loading="lazy" src="assets/stickers/burst-sky.svg" alt="" width="20" height="20">
+    <span>เข้าใจตัวเอง แล้วตัดสินใจง่ายขึ้น</span><img loading="lazy" src="assets/stickers/star4-butter.svg" alt="" width="20" height="20">
+    <span>The Unpopular Club</span><img loading="lazy" src="assets/stickers/star5-pink.svg" alt="" width="20" height="20">
+    <span>Human Design · BG5 · Bangkok</span><img loading="lazy" src="assets/stickers/burst-sky.svg" alt="" width="20" height="20">
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <img loading="lazy" src="assets/logo/unpop-ui-light.svg" alt="The Unpopular Club" class="footer-logo">
+        <p class="footer-brand-desc">
+          A space for people who want to understand themselves more clearly, so they can make better decisions in life, work and business.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h5>Start</h5>
+        <ul class="footer-links">
+          <li><a href="chart-check.html" data-en="Free Chart Check">เช็ก Chart ฟรี</a></li>
+          <li><a href="living-your-design.html">Living Your Design</a></li>
+          <li><a href="bg5-foundation.html">BG5 Foundation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>More</h5>
+        <ul class="footer-links">
+          <li><a href="for-teams.html" data-en="For Teams">สำหรับองค์กร</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" data-en="Contact">ติดต่อ</a></li>
+          <li><a href="https://www.patreon.com/cw/unpop_club" target="_blank">Patreon</a></li>
+          <li><a href="https://bg5businessinstitute.com" target="_blank">BG5 Business Institute</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Follow</h5>
+        <ul class="footer-links">
+          <li><a href="https://lin.ee/NE2p0V5" target="_blank">LINE</a></li>
+          <li><a href="https://www.instagram.com/unpop_club" target="_blank">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@unpop_club" target="_blank">YouTube</a></li>
+          <li><a href="https://www.tiktok.com/@unpop_club" target="_blank">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 The Unpopular Club · Bangkok, Thailand</span>
+      <div style="display:flex; gap:20px; flex-wrap:wrap; align-items:center;">
+        <a href="privacy-policy.html" style="color:inherit; opacity:0.75; font-size:0.8rem; text-decoration:none;">Privacy Policy</a>
+        <a href="terms-conditions.html" style="color:inherit; opacity:0.75; font-size:0.8rem; text-decoration:none;">Terms &amp; Conditions</a>
+        <a href="disclaimer.html" style="color:inherit; opacity:0.75; font-size:0.8rem; text-decoration:none;">Disclaimer</a>
+        <a href="#cookie-settings" style="color:inherit; opacity:0.75; font-size:0.8rem; text-decoration:none;">Cookie Settings</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="scroll.js"></script>
+<script src="interactive.js"></script>
+<script src="consent.js"></script>
+<script>
+  // Semester tabs
+  document.querySelectorAll('.sem-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.target;
+      document.querySelectorAll('.sem-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.sem-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

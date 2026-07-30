@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sticker Scrapbook · Preview</title>
+<link rel="icon" href="assets/logo/mark-favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .pv-sec { padding:56px 0; }
+  .pv-h   { font-family:var(--font-mono); font-size:0.8125rem; letter-spacing:.1em;
+            text-transform:uppercase; border-bottom:var(--border-solid); padding-bottom:8px; margin-bottom:28px; }
+  .sw     { border:var(--border-solid); border-radius:4px; padding:0; overflow:hidden; box-shadow:var(--shadow-hard-sm); }
+  .sw i   { display:block; height:74px; }
+  .sw p   { font-family:var(--font-mono); font-size:.72rem; padding:8px 10px; border-top:var(--border-solid); letter-spacing:.06em; }
+  .row    { display:flex; gap:16px; flex-wrap:wrap; align-items:center; }
+  .g5     { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:16px; }
+  .g3     { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; }
+  .stick-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(104px,1fr)); gap:18px; }
+  .stick-grid figure { border:var(--border-solid); border-radius:4px; padding:12px; text-align:center; background:var(--paper); }
+  .stick-grid img { width:56px; height:56px; margin:0 auto 8px; }
+  .stick-grid figcaption { font-family:var(--font-mono); font-size:.62rem; letter-spacing:.04em; word-break:break-all; }
+</style>
+</head>
+<body>
+
+<section class="pv-sec"><div class="container">
+  <p class="label">Preview · Sticker Scrapbook</p>
+  <h1 class="display" style="margin-top:8px;">this is what it<br>looks like now</h1>
+  <p class="body-lg" style="max-width:640px; margin-top:20px;">
+    หน้านี้ไม่ได้อยู่ในเมนู เปิดไว้ดูว่าระบบดีไซน์ทำงานยังไง ลบทิ้งได้ตอนขึ้นจริง
+  </p>
+  <div class="row" style="margin-top:28px;">
+    <a href="index.html" class="btn btn-primary">ไปหน้าแรก</a>
+    <a href="#components" class="btn btn-outline">ดูส่วนประกอบ</a>
+  </div>
+</div></section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee__track">
+  <span>เข้าใจตัวเอง แล้วตัดสินใจง่ายขึ้น</span><img src="assets/stickers/star4-butter.svg" alt="" width="20" height="20">
+  <span>The Unpopular Club</span><img src="assets/stickers/star5-pink.svg" alt="" width="20" height="20">
+  <span>Human Design · BG5 · Bangkok</span><img src="assets/stickers/burst-sky.svg" alt="" width="20" height="20">
+  <span>เข้าใจตัวเอง แล้วตัดสินใจง่ายขึ้น</span><img src="assets/stickers/star4-butter.svg" alt="" width="20" height="20">
+  <span>The Unpopular Club</span><img src="assets/stickers/star5-pink.svg" alt="" width="20" height="20">
+  <span>Human Design · BG5 · Bangkok</span><img src="assets/stickers/burst-sky.svg" alt="" width="20" height="20">
+</div></div>
+
+<section class="pv-sec" id="components"><div class="container">
+  <p class="pv-h">01 · Palette</p>
+  <div class="g5">
+    <div class="sw"><i style="background:var(--ink)"></i><p>ink 2C2B2B</p></div>
+    <div class="sw"><i style="background:var(--paper)"></i><p>paper FFFEFB</p></div>
+    <div class="sw"><i style="background:var(--cream)"></i><p>cream F5EEE2</p></div>
+    <div class="sw"><i style="background:var(--sky)"></i><p>sky B9E1E5</p></div>
+    <div class="sw"><i style="background:var(--sky-light)"></i><p>sky-light D2ECEE</p></div>
+    <div class="sw"><i style="background:var(--matcha)"></i><p>matcha D3E2B7</p></div>
+    <div class="sw"><i style="background:var(--matcha-dark)"></i><p>matcha-dark BBD28F</p></div>
+    <div class="sw"><i style="background:var(--pink)"></i><p>pink FFC0CD</p></div>
+    <div class="sw"><i style="background:var(--pink-light)"></i><p>pink-light FFDADF</p></div>
+    <div class="sw"><i style="background:var(--butter)"></i><p>butter FFF4B3</p></div>
+    <div class="sw"><i style="background:var(--butter-light)"></i><p>butter-light FCEB97</p></div>
+  </div>
+</div></section>
+
+<section class="pv-sec band-sky"><div class="container">
+  <p class="pv-h">02 · Type · สองแกนเท่านั้น</p>
+  <p class="label">mono · ใช้กับป้ายกำกับ เวลา ตาราง</p>
+  <h2 class="display" style="margin:10px 0 6px;">huge = emotion</h2>
+  <h2 class="h1">h1 · lowercase</h2>
+  <h3 class="h2">h2 · keeps case for BG5 and CareerPathKEY</h3>
+  <p class="body-lg" style="margin-top:16px; max-width:620px;">
+    body ใช้ Sukhumvit Set เหมือนเดิม เพราะ Space Grotesk ไม่มีสระไทย
+    หัวข้อภาษาอังกฤษได้ Space Grotesk ส่วนภาษาไทยตกไปที่ Sukhumvit อัตโนมัติ
+  </p>
+</div></section>
+
+<section class="pv-sec"><div class="container">
+  <p class="pv-h">03 · Buttons</p>
+  <div class="row">
+    <a href="#" class="btn btn-primary">Primary · sky</a>
+    <a href="#" class="btn btn-accent">Accent · matcha</a>
+    <a href="#" class="btn btn-cream">Third · butter</a>
+    <a href="#" class="btn btn-outline">Secondary · โปร่ง</a>
+    <a href="#" class="btn btn-primary btn-sm">Small</a>
+    <a href="#" class="btn btn-primary btn-lg">Large</a>
+  </div>
+  <p class="body-sm" style="margin-top:16px;">ชี้แล้วขยับ 2px เข้าหาเงา กดแล้วขยับ 4px เงาหาย</p>
+</div></section>
+
+<section class="pv-sec band-matcha"><div class="container">
+  <p class="pv-h">04 · Cards บนพื้นเข้ม วางตัวอ่อนทับ</p>
+  <div class="g3">
+    <div class="card"><h4 class="h4">Paper</h4><p class="body-sm">การ์ดพื้นฐาน ขอบหมึก 2px เงาแข็ง 8px</p></div>
+    <div class="card-sky"><h4 class="h4">Sky light</h4><p class="body-sm">สีอ่อนบนพื้นเข้ม ไม่ซ้ำเฉดกัน</p></div>
+    <div class="card-pink"><h4 class="h4">Pink light</h4><p class="body-sm">คู่เสริม ใช้เป็นจุดป๊อป</p></div>
+  </div>
+  <div class="g3" style="margin-top:24px;">
+    <div class="card-butter"><h4 class="h4">Butter</h4><p class="body-sm">ใช้กับ callout</p></div>
+    <div class="card-cream"><h4 class="h4">Cream</h4><p class="body-sm">พื้นผิวรอง โซนเงียบ</p></div>
+    <div class="card-dark"><h4 class="h4" style="color:var(--paper)">Ink</h4><p class="body-sm">เงาเป็น sky ไม่ใช่หมึก</p></div>
+  </div>
+</div></section>
+
+<section class="pv-sec"><div class="container">
+  <p class="pv-h">05 · Stickers · 18 ตัว</p>
+  <div class="stick-grid">
+    <figure><img src="assets/stickers/star4-butter.svg" alt=""><figcaption>star4-butter</figcaption></figure>
+    <figure><img src="assets/stickers/star4-sky.svg" alt=""><figcaption>star4-sky</figcaption></figure>
+    <figure><img src="assets/stickers/star5-pink.svg" alt=""><figcaption>star5-pink</figcaption></figure>
+    <figure><img src="assets/stickers/star5-matcha.svg" alt=""><figcaption>star5-matcha</figcaption></figure>
+    <figure><img src="assets/stickers/cursor-sky.svg" alt=""><figcaption>cursor-sky</figcaption></figure>
+    <figure><img src="assets/stickers/cursor-pink.svg" alt=""><figcaption>cursor-pink</figcaption></figure>
+    <figure><img src="assets/stickers/speech-matcha.svg" alt=""><figcaption>speech-matcha</figcaption></figure>
+    <figure><img src="assets/stickers/speech-sky.svg" alt=""><figcaption>speech-sky</figcaption></figure>
+    <figure><img src="assets/stickers/heart-pink.svg" alt=""><figcaption>heart-pink</figcaption></figure>
+    <figure><img src="assets/stickers/flower-sky.svg" alt=""><figcaption>flower-sky</figcaption></figure>
+    <figure><img src="assets/stickers/burst-butter.svg" alt=""><figcaption>burst-butter</figcaption></figure>
+    <figure><img src="assets/stickers/burst-sky.svg" alt=""><figcaption>burst-sky</figcaption></figure>
+    <figure><img src="assets/stickers/blob-matcha.svg" alt=""><figcaption>blob-matcha</figcaption></figure>
+    <figure><img src="assets/stickers/squiggle-ink.svg" alt=""><figcaption>squiggle-ink</figcaption></figure>
+    <figure><img src="assets/stickers/arrow-ink.svg" alt=""><figcaption>arrow-ink</figcaption></figure>
+    <figure><img src="assets/stickers/check-matcha.svg" alt=""><figcaption>check-matcha</figcaption></figure>
+    <figure><img src="assets/stickers/plus-ink.svg" alt=""><figcaption>plus-ink</figcaption></figure>
+    <figure><img src="assets/stickers/eye-butter.svg" alt=""><figcaption>eye-butter</figcaption></figure>
+  </div>
+  <div class="card has-sticker" style="margin-top:32px; max-width:520px;">
+    <img src="assets/stickers/star4-butter.svg" alt="" class="sticker sticker--tr" width="72" height="72">
+    <img src="assets/stickers/speech-matcha.svg" alt="" class="sticker sticker--bl" width="64" height="64">
+    <h4 class="h4">วางทับขอบแบบนี้</h4>
+    <p class="body-sm">ใส่ <code>has-sticker</code> ที่กล่อง แล้ว <code>sticker sticker--tr</code> ที่รูป</p>
+  </div>
+</div></section>
+
+<section class="pv-sec band-pink" data-pin><div class="container">
+  <p class="pv-h">06 · Scroll pin</p>
+  <h2 class="h1">section นี้ค้างไว้</h2>
+  <p class="body-lg" style="max-width:560px;">เลื่อนลงต่อ แล้วดูส่วนถัดไปเลื่อนทับขึ้นมา ใส่ <code>data-pin</code> ที่ section</p>
+</div></section>
+
+<section class="pv-sec" style="background:var(--paper); min-height:70vh;"><div class="container">
+  <p class="pv-h">07 · ส่วนที่เลื่อนทับ</p>
+  <h2 class="h2">แบบนี้</h2>
+  <p class="body-lg" style="max-width:560px;">ปิดอัตโนมัติถ้าเครื่องตั้ง reduced motion</p>
+  <div class="row" style="margin-top:24px;">
+    <img src="assets/logo/unpop-primary.svg" alt="unpop" style="height:120px; width:auto;">
+    <img src="assets/logo/mark-primary.svg" alt="" style="height:100px; width:auto;">
+  </div>
+</div></section>
+
+<script src="scroll.js"></script>
+</body>
+</html>
